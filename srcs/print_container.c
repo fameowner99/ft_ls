@@ -24,9 +24,9 @@ static int		find_length_of_column(int min)
 	return (width - 1);
 }
 
-static int		find_max_length(t_container *head)
+static int		find_max_length(t_data *head)
 {
-	t_container	*tmp;
+	t_data	*tmp;
 	int			max;
 
 	max = 0;
@@ -49,9 +49,9 @@ static int		find_number_of_columns()
 	return (w.ws_col);
 }
 
-void			print_files(t_container *head)
+void			print_files(t_data *head)
 {
-	t_container	*tmp;
+	t_data	*tmp;
 	int			s;
 	int			i;
 	int			c;

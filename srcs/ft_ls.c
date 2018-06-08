@@ -18,8 +18,7 @@ void		ft_ls(int argc, char **argv)
 
 	set_flag(&un);
 	un.error = NULL;
-	un.file = NULL;
-	un.directory = NULL;
+	un.data = NULL;
 	parse_input(&un, argc, argv);
 	main_part(&un);
 }

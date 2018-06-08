@@ -14,13 +14,13 @@
 
 void		main_part(t_union *un)
 {
-	sort_list(&un->error, ascending);
+	sort_list_error(&un->error, ascending);
 	print_list_error(un->error);
-	sort_list(&un->directory, ascending);
-	sort_list(&un->file, ascending);
-	if (un->file)
+    sort_list_data(&un->data, ascending);
+
+	if (un->data)
 	{
 		if (!un->flag_out.l)
-			print_files(un->file);
+			print_files(un->data);
 	}
 }

@@ -43,14 +43,20 @@ typedef struct			s_container
 	struct s_container	*next;
 }						t_container;
 
+typedef struct 			s_data
+{
+	char 				*str;
+	struct DIR			*dir;
+	struct stat			*stat;
+	struct s_data		*next;
+}						t_data;
 
 typedef struct		s_union
 {
 	t_flag_out		flag_out;
 	t_flag_un		flag_un;
 	t_container		*error;
-	t_container		*directory;
-	t_container		*file;
+	t_data			*data;
 }					t_union;
 
 /*
@@ -62,9 +68,11 @@ void				set_flag(t_union *un);
 void				ft_ls(int argc, char **argv);
 void				parse_input(t_union *un, int argc, char **argv);
 t_container			*container_push_back(t_container *head, char *str);
-void				sort_list(t_container **head, int (*cmp)(char*, char*));
+void				sort_list_error(t_container **head, int (*cmp)(char*, char*));
 void				print_list_error(t_container *head);
 int					ascending(char *str1, char *str2);
 void				main_part(t_union *un);
-void				print_files(t_container *head);
+void				print_files(t_data *head);
+t_data				*data_container_push_back(t_data *head, char *str, DIR *d, struct stat *s);
+void	    		sort_list_data(t_data **head, int (*cmp)(char*, char*));
 #endif
