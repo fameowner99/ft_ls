@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ft_ls.dir/srcs/print_container.c.o"
   "CMakeFiles/ft_ls.dir/srcs/sort_list.c.o"
   "CMakeFiles/ft_ls.dir/srcs/manage_data_container.c.o"
+  "CMakeFiles/ft_ls.dir/srcs/print_directory.c.o"
   "ft_ls.pdb"
   "ft_ls"
 )

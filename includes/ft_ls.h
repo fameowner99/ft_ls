@@ -35,6 +35,9 @@ typedef struct		s_flag_un
 {
 	int				found_dir;
 	int				error_after_dir;
+    int             arg;
+    int             found_file;
+    int             one_dir;
 }					t_flag_un;
 
 typedef struct			s_container
@@ -46,7 +49,7 @@ typedef struct			s_container
 typedef struct 			s_data
 {
 	char 				*str;
-	struct DIR			*dir;
+	int 				dir;
 	struct stat			*stat;
 	struct s_data		*next;
 }						t_data;
@@ -57,6 +60,7 @@ typedef struct		s_union
 	t_flag_un		flag_un;
 	t_container		*error;
 	t_data			*data;
+
 }					t_union;
 
 /*
@@ -72,7 +76,16 @@ void				sort_list_error(t_container **head, int (*cmp)(char*, char*));
 void				print_list_error(t_container *head);
 int					ascending(char *str1, char *str2);
 void				main_part(t_union *un);
-void				print_files(t_data *head);
-t_data				*data_container_push_back(t_data *head, char *str, DIR *d, struct stat *s);
+void				print_files(t_data *head, t_union un);
+t_data				*data_container_push_back(t_data *head, char *str, struct stat *s);
 void	    		sort_list_data(t_data **head, int (*cmp)(char*, char*));
+int 		        find_length_of_list(t_data *lst);
+int		find_number_of_columns();
+int		find_max_length(t_data *head);
+int		find_length_of_column(int min);
+void			print_all(t_data *head, t_union un);
+void               print_directory(char *str, t_union un);
+void            print_all_directories(t_data *data, t_union un);
+
+void        check_exist_files(t_union *un);
 #endif

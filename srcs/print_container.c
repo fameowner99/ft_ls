@@ -12,7 +12,7 @@
 
 #include "../includes/ft_ls.h"
 
-static int		find_length_of_column(int min)
+int		find_length_of_column(int min)
 {
 	int			width;
 
@@ -24,7 +24,7 @@ static int		find_length_of_column(int min)
 	return (width - 1);
 }
 
-static int		find_max_length(t_data *head)
+int		find_max_length(t_data *head)
 {
 	t_data	*tmp;
 	int			max;
@@ -40,16 +40,15 @@ static int		find_max_length(t_data *head)
 	return (max);
 }
 
-static int		find_number_of_columns()
+int		find_number_of_columns()
 {
 	struct winsize w;
 
 	ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
-	ft_printf ("columns %d\n", w.ws_col);
 	return (w.ws_col);
 }
 
-void			print_files(t_data *head)
+void			print_files(t_data *head, t_union un)
 {
 	t_data	*tmp;
 	int			s;
@@ -58,19 +57,23 @@ void			print_files(t_data *head)
 	
 	tmp = head;
 	s = find_length_of_column(find_max_length(head));
-	c = find_number_of_columns() / (s);
-	ft_printf(YELLOW"%i\n"RESET, c);
+	c = find_number_of_columns() / (s + 1);
+    if (c == 0)
+        c = 1;
 	i = 0;
 	while (tmp)
 	{
-		ft_printf(GREEN"%-*s "RESET, s, tmp->str);
+        if (!tmp->dir)
+			ft_printf(GREEN"%-*s "RESET, s, tmp->str);
 		tmp = tmp->next;
 		++i;
 		if (i == c)
 		{
 			i = 0;
+            if (tmp)
 			ft_printf("\n");
 		}
 	}
-	ft_printf("\n");
+    if (un.flag_un.found_dir)
+	    ft_printf("\n");
 }

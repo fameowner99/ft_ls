@@ -19,6 +19,12 @@ void		ft_ls(int argc, char **argv)
 	set_flag(&un);
 	un.error = NULL;
 	un.data = NULL;
-	parse_input(&un, argc, argv);
-	main_part(&un);
+    if ((argc == 2 && !ft_strcmp(argv[1], ".")) || argc == 1)
+        un.flag_un.arg = 0;
+    else
+    {
+        parse_input(&un, argc, argv);
+        un.flag_un.arg = 1;
+    }
+    main_part(&un);
 }

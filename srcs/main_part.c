@@ -16,11 +16,18 @@ void		main_part(t_union *un)
 {
 	sort_list_error(&un->error, ascending);
 	print_list_error(un->error);
+
+	//diff sort
     sort_list_data(&un->data, ascending);
 
-	if (un->data)
+	if (un->flag_un.arg && un->data)
 	{
-		if (!un->flag_out.l)
-			print_files(un->data);
+		if (!un->flag_out.l && !un->flag_out.R)
+        {
+            check_exist_files(un);
+			print_files(un->data, *un);
+            print_all_directories(un->data, *un);
+        }
 	}
+	//else another output
 }

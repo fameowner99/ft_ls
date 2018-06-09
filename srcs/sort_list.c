@@ -48,6 +48,7 @@ void			sort_list_data(t_data **head, int (*cmp)(char*, char*))
 	t_data	*tmp1;
 	t_data	*tmp2;
 	char		*str_tmp;
+	int 		dir;
 
 	tmp1 = *head;
 	while (tmp1)
@@ -58,8 +59,11 @@ void			sort_list_data(t_data **head, int (*cmp)(char*, char*))
 			if (!cmp(tmp2->str, tmp2->next->str))
 			{
 				str_tmp = tmp2->str;
+				dir = tmp2->dir;
 				tmp2->str = tmp2->next->str;
+				tmp2->dir = tmp2->next->dir;
 				tmp2->next->str = str_tmp;
+				tmp2->next->dir = dir;
 			}
 			tmp2 = tmp2->next;
 		}

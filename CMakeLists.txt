@@ -15,7 +15,8 @@ add_executable(ft_ls
         srcs/parsing.c
         srcs/print_container.c
         srcs/sort_list.c
-        srcs/manage_data_container.c)
+        srcs/manage_data_container.c
+        srcs/print_directory.c)
 
 add_library(libft STATIC IMPORTED) # Создание статической библиотеки
 set_property(TARGET libft PROPERTY

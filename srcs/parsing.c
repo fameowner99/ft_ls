@@ -63,8 +63,6 @@ void	parse_input(t_union *un, int argc, char **argv)
 {
 	int	i;
 	int	fd;
-	DIR *dir;
-	struct dirent *dp;
 	struct stat			*s;
 
 	i = 1;
@@ -90,10 +88,9 @@ void	parse_input(t_union *un, int argc, char **argv)
 		{
 			close(fd);
 			un->flag_un.found_dir = 1;
-			dir = opendir(argv[i]);
             s = (struct stat *)malloc(sizeof(struct stat));
 			stat(argv[i], s);
-			un->data = data_container_push_back(un->data, argv[i], dir, s);
+			un->data = data_container_push_back(un->data, argv[i], s);
 		}
 		++i;
 	}
