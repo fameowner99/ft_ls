@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/vmiachko/ft_ls/srcs/parsing.c" "/Users/vmiachko/ft_ls/cmake-build-debug/CMakeFiles/ft_ls.dir/srcs/parsing.c.o"
   "/Users/vmiachko/ft_ls/srcs/print_container.c" "/Users/vmiachko/ft_ls/cmake-build-debug/CMakeFiles/ft_ls.dir/srcs/print_container.c.o"
   "/Users/vmiachko/ft_ls/srcs/print_directory.c" "/Users/vmiachko/ft_ls/cmake-build-debug/CMakeFiles/ft_ls.dir/srcs/print_directory.c.o"
+  "/Users/vmiachko/ft_ls/srcs/recursion.c" "/Users/vmiachko/ft_ls/cmake-build-debug/CMakeFiles/ft_ls.dir/srcs/recursion.c.o"
   "/Users/vmiachko/ft_ls/srcs/sort_list.c" "/Users/vmiachko/ft_ls/cmake-build-debug/CMakeFiles/ft_ls.dir/srcs/sort_list.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")

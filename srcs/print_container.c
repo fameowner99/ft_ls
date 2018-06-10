@@ -24,7 +24,7 @@ int		find_length_of_column(int min)
 	return (width - 1);
 }
 
-int		find_max_length(t_data *head)
+int		find_max_length(t_data *head, t_union un)
 {
 	t_data	*tmp;
 	int			max;
@@ -33,7 +33,7 @@ int		find_max_length(t_data *head)
 	tmp = head;
 	while (tmp)
 	{
-		if (ft_strlen(tmp->str) > max)
+		if (tmp->str && tmp->str[0] != '.' && ft_strlen(tmp->str) > max)
 			max = ft_strlen(tmp->str);
 		tmp = tmp->next;
 	}
@@ -56,8 +56,8 @@ void			print_files(t_data *head, t_union un)
 	int			c;
 	
 	tmp = head;
-	s = find_length_of_column(find_max_length(head));
-	c = find_number_of_columns() / (s + 1);
+	s = find_length_of_column(find_max_length(head, un));
+	c = (find_number_of_columns() + find_max_length(head, un) - s)/ (s + 1);
     if (c == 0)
         c = 1;
 	i = 0;
@@ -74,6 +74,6 @@ void			print_files(t_data *head, t_union un)
 			ft_printf("\n");
 		}
 	}
-    if (un.flag_un.found_dir)
+    if (un.flag_un.found_dir && un.flag_un.found_file)
 	    ft_printf("\n");
 }

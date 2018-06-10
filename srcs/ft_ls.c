@@ -12,6 +12,22 @@
 
 #include "../includes/ft_ls.h"
 
+static int count_argc(int argc, char **argv)
+{
+    int i;
+    int c;
+
+    c = 0;
+    i = 1;
+    while (i < argc)
+    {
+        if (argv[i][0] != '-')
+            ++c;
+        ++i;
+    }
+    return (c);
+}
+
 void		ft_ls(int argc, char **argv)
 {
 	t_union	un;
@@ -19,12 +35,24 @@ void		ft_ls(int argc, char **argv)
 	set_flag(&un);
 	un.error = NULL;
 	un.data = NULL;
-    if ((argc == 2 && !ft_strcmp(argv[1], ".")) || argc == 1)
-        un.flag_un.arg = 0;
-    else
+	un.flag_un.arg = count_argc(argc, argv);
+    parse_input(&un, argc, argv);
+    if (un.flag_un.arg)
     {
-        parse_input(&un, argc, argv);
-        un.flag_un.arg = 1;
+        sort_list_error(&un.error, ascending);
+        print_list_error(un.error);
     }
-    main_part(&un);
+    if (!un.flag_out.R && !un.flag_out.l)
+    {
+        if ((count_argc(argc, argv) == 1 && !ft_strcmp(argv[1], ".")) || count_argc(argc, argv) == 0) {
+            un.data = create_data(".");
+        }
+        main_part(&un);
+    }
+    if (un.flag_out.R && !un.flag_out.l)
+    {
+        recursion_helper(&un);
+    }
+
+
 }

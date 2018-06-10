@@ -20,6 +20,8 @@ int		prev_check_flag(t_union *un, char *str)
 		return (0);
 	if (str[0] == '-' && ft_strlen(str) == 1)
 		return (0);
+	if (un->data || un->error)
+		return (0);
 	i = 1;
 	while (str[i])
 	{
@@ -72,7 +74,7 @@ void	parse_input(t_union *un, int argc, char **argv)
 		{	
 			if (!un->flag_un.found_dir && !check_flag(un, argv[i]))
 				{
-					if (argv[i][0] && argv[i][0] == '-')
+					if (!un->data && !un->error && argv[i][0] && argv[i][0] == '-')
 					{
 						ft_printf(RED"ft_ls: illegal option -- %s\n"RESET, argv[i] + 1);
 						ft_printf(RED"usage: [-Ralrt] [file ...]\n"RESET);
@@ -90,7 +92,7 @@ void	parse_input(t_union *un, int argc, char **argv)
 			un->flag_un.found_dir = 1;
             s = (struct stat *)malloc(sizeof(struct stat));
 			stat(argv[i], s);
-			un->data = data_container_push_back(un->data, argv[i], s);
+			un->data = data_container_push_back(un->data, argv[i], s, ft_strdup("."));
 		}
 		++i;
 	}

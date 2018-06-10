@@ -109,6 +109,9 @@
 		<Unit filename="/Users/vmiachko/ft_ls/srcs/print_directory.c">
 			<Option target="ft_ls"/>
 		</Unit>
+		<Unit filename="/Users/vmiachko/ft_ls/srcs/recursion.c">
+			<Option target="ft_ls"/>
+		</Unit>
 		<Unit filename="/Users/vmiachko/ft_ls/srcs/sort_list.c">
 			<Option target="ft_ls"/>
 		</Unit>

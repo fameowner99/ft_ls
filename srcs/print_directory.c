@@ -20,15 +20,20 @@ void			print_all(t_data *head, t_union un)
     int			c;
 
     tmp = head;
-    s = find_length_of_column(find_max_length(head));
-    c = find_number_of_columns() / (s);
+    s = find_length_of_column(find_max_length(head, un));
+    c = (find_number_of_columns() + find_max_length(head, un) - s)/ (s + 1);
+	if (c == 0)
+		c = 1;
+
     i = 0;
     while (tmp)
     {
         if (tmp->str[0] != '.')
+        {
             ft_printf(GREEN"%-*s "RESET, s, tmp->str);
+            ++i;
+        }
         tmp = tmp->next;
-        ++i;
         if (i == c)
         {
             i = 0;
@@ -40,29 +45,19 @@ void			print_all(t_data *head, t_union un)
 }
 
 
-void               print_directory(char *str, t_union un)
+void               print_directory(char *str, t_union un, t_data *data)
 {
-    DIR           *dir;
-    struct dirent *dp;
-    struct stat       *s;
-    t_data         *data;
 
-    data = NULL;
-    if (!(dir = opendir (str)))
-        exit(1);
-    if (!un.flag_un.one_dir)
-        ft_printf(GREEN"%s:\n"RESET, str);
-    while ((dp = readdir (dir)))
+
+    if (un.flag_un.arg)
     {
-
-        s = (struct stat *)malloc(sizeof(struct stat));
-        stat(str, s);
-        data = data_container_push_back(data, dp->d_name, s);
+        if (!un.flag_un.one_dir)
+            ft_printf(GREEN"%s:\n"RESET, str);
+        sort_list_data(&data, ascending);
+        print_all(data, un);
     }
-
-    //diff flags
-    sort_list_data(&data, ascending);
-    print_all(data, un);
+    else
+        print_all(data, un);
 
 }
 
@@ -70,6 +65,7 @@ void            print_all_directories(t_data *data, t_union un)
 {
     t_data      *tmp;
     int            i;
+    t_data      *dir_data;
 
     i = 0;
     tmp = data;
@@ -79,7 +75,8 @@ void            print_all_directories(t_data *data, t_union un)
         {
             if (i || un.flag_un.found_file)
                 ft_printf("\n");
-            print_directory(tmp->str, un);
+            dir_data = create_data(tmp->str);
+            print_directory(tmp->str, un, dir_data);
             i = 1;
         }
         tmp = tmp->next;

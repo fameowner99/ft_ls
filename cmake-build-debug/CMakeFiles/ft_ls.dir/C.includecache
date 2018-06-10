@@ -74,6 +74,10 @@ stdint.h
 ../includes/ft_ls.h
 /Users/vmiachko/ft_ls/includes/ft_ls.h
 
+/Users/vmiachko/ft_ls/srcs/recursion.c
+../includes/ft_ls.h
+/Users/vmiachko/ft_ls/includes/ft_ls.h
+
 /Users/vmiachko/ft_ls/srcs/sort_list.c
 ../includes/ft_ls.h
 /Users/vmiachko/ft_ls/includes/ft_ls.h

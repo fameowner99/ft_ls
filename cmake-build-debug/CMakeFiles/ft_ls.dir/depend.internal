@@ -46,6 +46,11 @@ CMakeFiles/ft_ls.dir/srcs/print_directory.c.o
  /Users/vmiachko/ft_ls/libft/ft_printf/ft_printf.h
  /Users/vmiachko/ft_ls/libft/libft.h
  /Users/vmiachko/ft_ls/srcs/print_directory.c
+CMakeFiles/ft_ls.dir/srcs/recursion.c.o
+ /Users/vmiachko/ft_ls/includes/ft_ls.h
+ /Users/vmiachko/ft_ls/libft/ft_printf/ft_printf.h
+ /Users/vmiachko/ft_ls/libft/libft.h
+ /Users/vmiachko/ft_ls/srcs/recursion.c
 CMakeFiles/ft_ls.dir/srcs/sort_list.c.o
  /Users/vmiachko/ft_ls/includes/ft_ls.h
  /Users/vmiachko/ft_ls/libft/ft_printf/ft_printf.h

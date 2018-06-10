@@ -366,6 +366,33 @@ srcs/print_directory.c.s:
 	$(MAKE) -f CMakeFiles/ft_ls.dir/build.make CMakeFiles/ft_ls.dir/srcs/print_directory.c.s
 .PHONY : srcs/print_directory.c.s
 
+srcs/recursion.o: srcs/recursion.c.o
+
+.PHONY : srcs/recursion.o
+
+# target to build an object file
+srcs/recursion.c.o:
+	$(MAKE) -f CMakeFiles/ft_ls.dir/build.make CMakeFiles/ft_ls.dir/srcs/recursion.c.o
+.PHONY : srcs/recursion.c.o
+
+srcs/recursion.i: srcs/recursion.c.i
+
+.PHONY : srcs/recursion.i
+
+# target to preprocess a source file
+srcs/recursion.c.i:
+	$(MAKE) -f CMakeFiles/ft_ls.dir/build.make CMakeFiles/ft_ls.dir/srcs/recursion.c.i
+.PHONY : srcs/recursion.c.i
+
+srcs/recursion.s: srcs/recursion.c.s
+
+.PHONY : srcs/recursion.s
+
+# target to generate assembly for a file
+srcs/recursion.c.s:
+	$(MAKE) -f CMakeFiles/ft_ls.dir/build.make CMakeFiles/ft_ls.dir/srcs/recursion.c.s
+.PHONY : srcs/recursion.c.s
+
 srcs/sort_list.o: srcs/sort_list.c.o
 
 .PHONY : srcs/sort_list.o
@@ -429,6 +456,9 @@ help:
 	@echo "... srcs/print_directory.o"
 	@echo "... srcs/print_directory.i"
 	@echo "... srcs/print_directory.s"
+	@echo "... srcs/recursion.o"
+	@echo "... srcs/recursion.i"
+	@echo "... srcs/recursion.s"
 	@echo "... srcs/sort_list.o"
 	@echo "... srcs/sort_list.i"
 	@echo "... srcs/sort_list.s"

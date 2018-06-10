@@ -49,6 +49,7 @@ typedef struct			s_container
 typedef struct 			s_data
 {
 	char 				*str;
+	char 				*path;
 	int 				dir;
 	struct stat			*stat;
 	struct s_data		*next;
@@ -77,15 +78,19 @@ void				print_list_error(t_container *head);
 int					ascending(char *str1, char *str2);
 void				main_part(t_union *un);
 void				print_files(t_data *head, t_union un);
-t_data				*data_container_push_back(t_data *head, char *str, struct stat *s);
+t_data				*data_container_push_back(t_data *head, char *str, struct stat *s, char *curr_path);
 void	    		sort_list_data(t_data **head, int (*cmp)(char*, char*));
 int 		        find_length_of_list(t_data *lst);
 int		find_number_of_columns();
-int		find_max_length(t_data *head);
+int		find_max_length(t_data *head, t_union un);
 int		find_length_of_column(int min);
 void			print_all(t_data *head, t_union un);
-void               print_directory(char *str, t_union un);
+void               print_directory(char *str, t_union un, t_data *data);
 void            print_all_directories(t_data *data, t_union un);
 
 void        check_exist_files(t_union *un);
+t_data		*create_data(char *str);
+void    recursion_helper(t_union *un);
+char			*conc_next_dir(char *prev, char *next);
+
 #endif

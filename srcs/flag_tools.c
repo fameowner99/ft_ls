@@ -56,5 +56,23 @@ void        check_exist_files(t_union *un)
     }
     if (c == 1 && !un->flag_un.found_file)
         un->flag_un.one_dir = 1;
+}
 
+t_data		*create_data(char *str)
+{
+	DIR           *dir;
+	struct dirent *dp;
+	struct stat       *s;
+	t_data         *data;
+
+	data = NULL;
+	if (!(dir = opendir (str)))
+		return (data);
+	while ((dp = readdir (dir)))
+	{
+		s = (struct stat *)malloc(sizeof(struct stat));
+		stat(str, s);
+		data = data_container_push_back(data, dp->d_name, s,  str);
+	}
+	return (data);
 }
