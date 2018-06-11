@@ -25,6 +25,7 @@ static t_data	*data_container_new(char *str, struct stat *s, char *curr_path)
     res->str = ft_strcpy(res->str, str);
     res->stat = s;
 	res->path = conc_next_dir(curr_path, str);
+    res->curr_dir = curr_path;
     res->next = NULL;
     if ((dir = opendir(res->path)))
         res->dir = 1;
@@ -49,4 +50,32 @@ t_data			*data_container_push_back(t_data *head, char *str, struct stat *s, char
     new = data_container_new(str,s, curr_path);
     tmp->next = new;
     return (head);
+}
+
+void		free_data_container(t_data *head)
+{
+	t_data *tmp;
+	int 	i;
+
+	i = 0;
+	while (head)
+	{
+		tmp = head->next;
+		free(head->str);
+		free(head->stat);
+		free(head->path);
+		head->str = NULL;
+		head->stat = NULL;
+		head->path = NULL;
+		head->next = NULL;
+		if (!i)
+		{
+			free(head->curr_dir);
+			head->curr_dir = NULL;
+		}
+		free(head);
+		head = tmp;
+		++i;
+	}
+
 }

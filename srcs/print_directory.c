@@ -28,11 +28,19 @@ void			print_all(t_data *head, t_union un)
     i = 0;
     while (tmp)
     {
-        if (tmp->str[0] != '.')
+        if (tmp->str[0] == '.')
         {
-            ft_printf(GREEN"%-*s "RESET, s, tmp->str);
-            ++i;
+			if (un.flag_out.a)
+			{
+				ft_printf(GREEN"%-*s "RESET, s, tmp->str);
+				++i;
+			}
         }
+		else
+		{
+			ft_printf(GREEN"%-*s "RESET, s, tmp->str);
+			++i;
+		}
         tmp = tmp->next;
         if (i == c)
         {
@@ -51,9 +59,9 @@ void               print_directory(char *str, t_union un, t_data *data)
 
     if (un.flag_un.arg)
     {
-        if (!un.flag_un.one_dir)
-            ft_printf(GREEN"%s:\n"RESET, str);
-        sort_list_data(&data, ascending);
+        if (!un.flag_un.one_dir && !un.flag_out.R)
+            ft_printf(BYELLOW"%s:\n"RESET, str);
+       // sort_list_data(&data, ascending);
         print_all(data, un);
     }
     else

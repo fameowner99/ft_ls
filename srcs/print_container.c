@@ -63,8 +63,16 @@ void			print_files(t_data *head, t_union un)
 	i = 0;
 	while (tmp)
 	{
-        if (!tmp->dir)
-			ft_printf(GREEN"%-*s "RESET, s, tmp->str);
+        if (!tmp->dir) {
+			if (tmp->str[0] == '.')
+			{
+				if (un.flag_out.a)
+					ft_printf(GREEN"%-*s "RESET, s, tmp->str);
+			}
+			else
+				ft_printf(GREEN"%-*s "RESET, s, tmp->str);
+
+		}
 		tmp = tmp->next;
 		++i;
 		if (i == c)

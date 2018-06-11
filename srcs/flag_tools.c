@@ -23,9 +23,9 @@ void	set_flag(t_union *un)
 	un->flag_un.error_after_dir = 0;
 }
 
-int 		find_length_of_list(t_data *lst)
+int 		find_length_of_list(t_container *lst)
 {
-	t_data	*tmp;
+	t_container	*tmp;
 	int 	c;
 
 	c = 0;

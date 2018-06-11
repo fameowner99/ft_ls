@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/fameowner/Programs/clion-2017.3.4/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
+RM = /home/fameowner/Programs/clion-2017.3.4/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/vmiachko/ft_ls
+CMAKE_SOURCE_DIR = /home/fameowner/ft_ls
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/vmiachko/ft_ls/cmake-build-debug
+CMAKE_BINARY_DIR = /home/fameowner/ft_ls/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ft_ls.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/ft_ls.dir/flags.make
 
 CMakeFiles/ft_ls.dir/srcs/flag_tools.c.o: CMakeFiles/ft_ls.dir/flags.make
 CMakeFiles/ft_ls.dir/srcs/flag_tools.c.o: ../srcs/flag_tools.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vmiachko/ft_ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/ft_ls.dir/srcs/flag_tools.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_ls.dir/srcs/flag_tools.c.o   -c /Users/vmiachko/ft_ls/srcs/flag_tools.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fameowner/ft_ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/ft_ls.dir/srcs/flag_tools.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_ls.dir/srcs/flag_tools.c.o   -c /home/fameowner/ft_ls/srcs/flag_tools.c
 
 CMakeFiles/ft_ls.dir/srcs/flag_tools.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ft_ls.dir/srcs/flag_tools.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/vmiachko/ft_ls/srcs/flag_tools.c > CMakeFiles/ft_ls.dir/srcs/flag_tools.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/fameowner/ft_ls/srcs/flag_tools.c > CMakeFiles/ft_ls.dir/srcs/flag_tools.c.i
 
 CMakeFiles/ft_ls.dir/srcs/flag_tools.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ft_ls.dir/srcs/flag_tools.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/vmiachko/ft_ls/srcs/flag_tools.c -o CMakeFiles/ft_ls.dir/srcs/flag_tools.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/fameowner/ft_ls/srcs/flag_tools.c -o CMakeFiles/ft_ls.dir/srcs/flag_tools.c.s
 
 CMakeFiles/ft_ls.dir/srcs/flag_tools.c.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/ft_ls.dir/srcs/flag_tools.c.o.provides.build: CMakeFiles/ft_ls.dir/sr
 
 CMakeFiles/ft_ls.dir/srcs/ft_ls.c.o: CMakeFiles/ft_ls.dir/flags.make
 CMakeFiles/ft_ls.dir/srcs/ft_ls.c.o: ../srcs/ft_ls.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vmiachko/ft_ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/ft_ls.dir/srcs/ft_ls.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_ls.dir/srcs/ft_ls.c.o   -c /Users/vmiachko/ft_ls/srcs/ft_ls.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fameowner/ft_ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/ft_ls.dir/srcs/ft_ls.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_ls.dir/srcs/ft_ls.c.o   -c /home/fameowner/ft_ls/srcs/ft_ls.c
 
 CMakeFiles/ft_ls.dir/srcs/ft_ls.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ft_ls.dir/srcs/ft_ls.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/vmiachko/ft_ls/srcs/ft_ls.c > CMakeFiles/ft_ls.dir/srcs/ft_ls.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/fameowner/ft_ls/srcs/ft_ls.c > CMakeFiles/ft_ls.dir/srcs/ft_ls.c.i
 
 CMakeFiles/ft_ls.dir/srcs/ft_ls.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ft_ls.dir/srcs/ft_ls.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/vmiachko/ft_ls/srcs/ft_ls.c -o CMakeFiles/ft_ls.dir/srcs/ft_ls.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/fameowner/ft_ls/srcs/ft_ls.c -o CMakeFiles/ft_ls.dir/srcs/ft_ls.c.s
 
 CMakeFiles/ft_ls.dir/srcs/ft_ls.c.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/ft_ls.dir/srcs/ft_ls.c.o.provides.build: CMakeFiles/ft_ls.dir/srcs/ft
 
 CMakeFiles/ft_ls.dir/srcs/main.c.o: CMakeFiles/ft_ls.dir/flags.make
 CMakeFiles/ft_ls.dir/srcs/main.c.o: ../srcs/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vmiachko/ft_ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/ft_ls.dir/srcs/main.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_ls.dir/srcs/main.c.o   -c /Users/vmiachko/ft_ls/srcs/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fameowner/ft_ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/ft_ls.dir/srcs/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_ls.dir/srcs/main.c.o   -c /home/fameowner/ft_ls/srcs/main.c
 
 CMakeFiles/ft_ls.dir/srcs/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ft_ls.dir/srcs/main.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/vmiachko/ft_ls/srcs/main.c > CMakeFiles/ft_ls.dir/srcs/main.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/fameowner/ft_ls/srcs/main.c > CMakeFiles/ft_ls.dir/srcs/main.c.i
 
 CMakeFiles/ft_ls.dir/srcs/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ft_ls.dir/srcs/main.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/vmiachko/ft_ls/srcs/main.c -o CMakeFiles/ft_ls.dir/srcs/main.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/fameowner/ft_ls/srcs/main.c -o CMakeFiles/ft_ls.dir/srcs/main.c.s
 
 CMakeFiles/ft_ls.dir/srcs/main.c.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/ft_ls.dir/srcs/main.c.o.provides.build: CMakeFiles/ft_ls.dir/srcs/mai
 
 CMakeFiles/ft_ls.dir/srcs/main_part.c.o: CMakeFiles/ft_ls.dir/flags.make
 CMakeFiles/ft_ls.dir/srcs/main_part.c.o: ../srcs/main_part.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vmiachko/ft_ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/ft_ls.dir/srcs/main_part.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_ls.dir/srcs/main_part.c.o   -c /Users/vmiachko/ft_ls/srcs/main_part.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fameowner/ft_ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/ft_ls.dir/srcs/main_part.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_ls.dir/srcs/main_part.c.o   -c /home/fameowner/ft_ls/srcs/main_part.c
 
 CMakeFiles/ft_ls.dir/srcs/main_part.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ft_ls.dir/srcs/main_part.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/vmiachko/ft_ls/srcs/main_part.c > CMakeFiles/ft_ls.dir/srcs/main_part.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/fameowner/ft_ls/srcs/main_part.c > CMakeFiles/ft_ls.dir/srcs/main_part.c.i
 
 CMakeFiles/ft_ls.dir/srcs/main_part.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ft_ls.dir/srcs/main_part.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/vmiachko/ft_ls/srcs/main_part.c -o CMakeFiles/ft_ls.dir/srcs/main_part.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/fameowner/ft_ls/srcs/main_part.c -o CMakeFiles/ft_ls.dir/srcs/main_part.c.s
 
 CMakeFiles/ft_ls.dir/srcs/main_part.c.o.requires:
 
@@ -155,16 +155,16 @@ CMakeFiles/ft_ls.dir/srcs/main_part.c.o.provides.build: CMakeFiles/ft_ls.dir/src
 
 CMakeFiles/ft_ls.dir/srcs/manage_list_container.c.o: CMakeFiles/ft_ls.dir/flags.make
 CMakeFiles/ft_ls.dir/srcs/manage_list_container.c.o: ../srcs/manage_list_container.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vmiachko/ft_ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/ft_ls.dir/srcs/manage_list_container.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_ls.dir/srcs/manage_list_container.c.o   -c /Users/vmiachko/ft_ls/srcs/manage_list_container.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fameowner/ft_ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/ft_ls.dir/srcs/manage_list_container.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_ls.dir/srcs/manage_list_container.c.o   -c /home/fameowner/ft_ls/srcs/manage_list_container.c
 
 CMakeFiles/ft_ls.dir/srcs/manage_list_container.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ft_ls.dir/srcs/manage_list_container.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/vmiachko/ft_ls/srcs/manage_list_container.c > CMakeFiles/ft_ls.dir/srcs/manage_list_container.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/fameowner/ft_ls/srcs/manage_list_container.c > CMakeFiles/ft_ls.dir/srcs/manage_list_container.c.i
 
 CMakeFiles/ft_ls.dir/srcs/manage_list_container.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ft_ls.dir/srcs/manage_list_container.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/vmiachko/ft_ls/srcs/manage_list_container.c -o CMakeFiles/ft_ls.dir/srcs/manage_list_container.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/fameowner/ft_ls/srcs/manage_list_container.c -o CMakeFiles/ft_ls.dir/srcs/manage_list_container.c.s
 
 CMakeFiles/ft_ls.dir/srcs/manage_list_container.c.o.requires:
 
@@ -179,16 +179,16 @@ CMakeFiles/ft_ls.dir/srcs/manage_list_container.c.o.provides.build: CMakeFiles/f
 
 CMakeFiles/ft_ls.dir/srcs/parsing.c.o: CMakeFiles/ft_ls.dir/flags.make
 CMakeFiles/ft_ls.dir/srcs/parsing.c.o: ../srcs/parsing.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vmiachko/ft_ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/ft_ls.dir/srcs/parsing.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_ls.dir/srcs/parsing.c.o   -c /Users/vmiachko/ft_ls/srcs/parsing.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fameowner/ft_ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/ft_ls.dir/srcs/parsing.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_ls.dir/srcs/parsing.c.o   -c /home/fameowner/ft_ls/srcs/parsing.c
 
 CMakeFiles/ft_ls.dir/srcs/parsing.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ft_ls.dir/srcs/parsing.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/vmiachko/ft_ls/srcs/parsing.c > CMakeFiles/ft_ls.dir/srcs/parsing.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/fameowner/ft_ls/srcs/parsing.c > CMakeFiles/ft_ls.dir/srcs/parsing.c.i
 
 CMakeFiles/ft_ls.dir/srcs/parsing.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ft_ls.dir/srcs/parsing.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/vmiachko/ft_ls/srcs/parsing.c -o CMakeFiles/ft_ls.dir/srcs/parsing.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/fameowner/ft_ls/srcs/parsing.c -o CMakeFiles/ft_ls.dir/srcs/parsing.c.s
 
 CMakeFiles/ft_ls.dir/srcs/parsing.c.o.requires:
 
@@ -203,16 +203,16 @@ CMakeFiles/ft_ls.dir/srcs/parsing.c.o.provides.build: CMakeFiles/ft_ls.dir/srcs/
 
 CMakeFiles/ft_ls.dir/srcs/print_container.c.o: CMakeFiles/ft_ls.dir/flags.make
 CMakeFiles/ft_ls.dir/srcs/print_container.c.o: ../srcs/print_container.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vmiachko/ft_ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/ft_ls.dir/srcs/print_container.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_ls.dir/srcs/print_container.c.o   -c /Users/vmiachko/ft_ls/srcs/print_container.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fameowner/ft_ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/ft_ls.dir/srcs/print_container.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_ls.dir/srcs/print_container.c.o   -c /home/fameowner/ft_ls/srcs/print_container.c
 
 CMakeFiles/ft_ls.dir/srcs/print_container.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ft_ls.dir/srcs/print_container.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/vmiachko/ft_ls/srcs/print_container.c > CMakeFiles/ft_ls.dir/srcs/print_container.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/fameowner/ft_ls/srcs/print_container.c > CMakeFiles/ft_ls.dir/srcs/print_container.c.i
 
 CMakeFiles/ft_ls.dir/srcs/print_container.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ft_ls.dir/srcs/print_container.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/vmiachko/ft_ls/srcs/print_container.c -o CMakeFiles/ft_ls.dir/srcs/print_container.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/fameowner/ft_ls/srcs/print_container.c -o CMakeFiles/ft_ls.dir/srcs/print_container.c.s
 
 CMakeFiles/ft_ls.dir/srcs/print_container.c.o.requires:
 
@@ -227,16 +227,16 @@ CMakeFiles/ft_ls.dir/srcs/print_container.c.o.provides.build: CMakeFiles/ft_ls.d
 
 CMakeFiles/ft_ls.dir/srcs/sort_list.c.o: CMakeFiles/ft_ls.dir/flags.make
 CMakeFiles/ft_ls.dir/srcs/sort_list.c.o: ../srcs/sort_list.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vmiachko/ft_ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/ft_ls.dir/srcs/sort_list.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_ls.dir/srcs/sort_list.c.o   -c /Users/vmiachko/ft_ls/srcs/sort_list.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fameowner/ft_ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/ft_ls.dir/srcs/sort_list.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_ls.dir/srcs/sort_list.c.o   -c /home/fameowner/ft_ls/srcs/sort_list.c
 
 CMakeFiles/ft_ls.dir/srcs/sort_list.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ft_ls.dir/srcs/sort_list.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/vmiachko/ft_ls/srcs/sort_list.c > CMakeFiles/ft_ls.dir/srcs/sort_list.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/fameowner/ft_ls/srcs/sort_list.c > CMakeFiles/ft_ls.dir/srcs/sort_list.c.i
 
 CMakeFiles/ft_ls.dir/srcs/sort_list.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ft_ls.dir/srcs/sort_list.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/vmiachko/ft_ls/srcs/sort_list.c -o CMakeFiles/ft_ls.dir/srcs/sort_list.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/fameowner/ft_ls/srcs/sort_list.c -o CMakeFiles/ft_ls.dir/srcs/sort_list.c.s
 
 CMakeFiles/ft_ls.dir/srcs/sort_list.c.o.requires:
 
@@ -251,16 +251,16 @@ CMakeFiles/ft_ls.dir/srcs/sort_list.c.o.provides.build: CMakeFiles/ft_ls.dir/src
 
 CMakeFiles/ft_ls.dir/srcs/manage_data_container.c.o: CMakeFiles/ft_ls.dir/flags.make
 CMakeFiles/ft_ls.dir/srcs/manage_data_container.c.o: ../srcs/manage_data_container.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vmiachko/ft_ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/ft_ls.dir/srcs/manage_data_container.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_ls.dir/srcs/manage_data_container.c.o   -c /Users/vmiachko/ft_ls/srcs/manage_data_container.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fameowner/ft_ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/ft_ls.dir/srcs/manage_data_container.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_ls.dir/srcs/manage_data_container.c.o   -c /home/fameowner/ft_ls/srcs/manage_data_container.c
 
 CMakeFiles/ft_ls.dir/srcs/manage_data_container.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ft_ls.dir/srcs/manage_data_container.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/vmiachko/ft_ls/srcs/manage_data_container.c > CMakeFiles/ft_ls.dir/srcs/manage_data_container.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/fameowner/ft_ls/srcs/manage_data_container.c > CMakeFiles/ft_ls.dir/srcs/manage_data_container.c.i
 
 CMakeFiles/ft_ls.dir/srcs/manage_data_container.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ft_ls.dir/srcs/manage_data_container.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/vmiachko/ft_ls/srcs/manage_data_container.c -o CMakeFiles/ft_ls.dir/srcs/manage_data_container.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/fameowner/ft_ls/srcs/manage_data_container.c -o CMakeFiles/ft_ls.dir/srcs/manage_data_container.c.s
 
 CMakeFiles/ft_ls.dir/srcs/manage_data_container.c.o.requires:
 
@@ -275,16 +275,16 @@ CMakeFiles/ft_ls.dir/srcs/manage_data_container.c.o.provides.build: CMakeFiles/f
 
 CMakeFiles/ft_ls.dir/srcs/print_directory.c.o: CMakeFiles/ft_ls.dir/flags.make
 CMakeFiles/ft_ls.dir/srcs/print_directory.c.o: ../srcs/print_directory.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vmiachko/ft_ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/ft_ls.dir/srcs/print_directory.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_ls.dir/srcs/print_directory.c.o   -c /Users/vmiachko/ft_ls/srcs/print_directory.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fameowner/ft_ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/ft_ls.dir/srcs/print_directory.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_ls.dir/srcs/print_directory.c.o   -c /home/fameowner/ft_ls/srcs/print_directory.c
 
 CMakeFiles/ft_ls.dir/srcs/print_directory.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ft_ls.dir/srcs/print_directory.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/vmiachko/ft_ls/srcs/print_directory.c > CMakeFiles/ft_ls.dir/srcs/print_directory.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/fameowner/ft_ls/srcs/print_directory.c > CMakeFiles/ft_ls.dir/srcs/print_directory.c.i
 
 CMakeFiles/ft_ls.dir/srcs/print_directory.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ft_ls.dir/srcs/print_directory.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/vmiachko/ft_ls/srcs/print_directory.c -o CMakeFiles/ft_ls.dir/srcs/print_directory.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/fameowner/ft_ls/srcs/print_directory.c -o CMakeFiles/ft_ls.dir/srcs/print_directory.c.s
 
 CMakeFiles/ft_ls.dir/srcs/print_directory.c.o.requires:
 
@@ -299,16 +299,16 @@ CMakeFiles/ft_ls.dir/srcs/print_directory.c.o.provides.build: CMakeFiles/ft_ls.d
 
 CMakeFiles/ft_ls.dir/srcs/recursion.c.o: CMakeFiles/ft_ls.dir/flags.make
 CMakeFiles/ft_ls.dir/srcs/recursion.c.o: ../srcs/recursion.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vmiachko/ft_ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/ft_ls.dir/srcs/recursion.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_ls.dir/srcs/recursion.c.o   -c /Users/vmiachko/ft_ls/srcs/recursion.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fameowner/ft_ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/ft_ls.dir/srcs/recursion.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_ls.dir/srcs/recursion.c.o   -c /home/fameowner/ft_ls/srcs/recursion.c
 
 CMakeFiles/ft_ls.dir/srcs/recursion.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ft_ls.dir/srcs/recursion.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/vmiachko/ft_ls/srcs/recursion.c > CMakeFiles/ft_ls.dir/srcs/recursion.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/fameowner/ft_ls/srcs/recursion.c > CMakeFiles/ft_ls.dir/srcs/recursion.c.i
 
 CMakeFiles/ft_ls.dir/srcs/recursion.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ft_ls.dir/srcs/recursion.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/vmiachko/ft_ls/srcs/recursion.c -o CMakeFiles/ft_ls.dir/srcs/recursion.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/fameowner/ft_ls/srcs/recursion.c -o CMakeFiles/ft_ls.dir/srcs/recursion.c.s
 
 CMakeFiles/ft_ls.dir/srcs/recursion.c.o.requires:
 
@@ -352,7 +352,7 @@ ft_ls: CMakeFiles/ft_ls.dir/srcs/recursion.c.o
 ft_ls: CMakeFiles/ft_ls.dir/build.make
 ft_ls: ../libft/libft.a
 ft_ls: CMakeFiles/ft_ls.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/vmiachko/ft_ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking C executable ft_ls"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/fameowner/ft_ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking C executable ft_ls"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ft_ls.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -379,6 +379,6 @@ CMakeFiles/ft_ls.dir/clean:
 .PHONY : CMakeFiles/ft_ls.dir/clean
 
 CMakeFiles/ft_ls.dir/depend:
-	cd /Users/vmiachko/ft_ls/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/vmiachko/ft_ls /Users/vmiachko/ft_ls /Users/vmiachko/ft_ls/cmake-build-debug /Users/vmiachko/ft_ls/cmake-build-debug /Users/vmiachko/ft_ls/cmake-build-debug/CMakeFiles/ft_ls.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/fameowner/ft_ls/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fameowner/ft_ls /home/fameowner/ft_ls /home/fameowner/ft_ls/cmake-build-debug /home/fameowner/ft_ls/cmake-build-debug /home/fameowner/ft_ls/cmake-build-debug/CMakeFiles/ft_ls.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ft_ls.dir/depend
 

@@ -12,7 +12,7 @@
 
 #include "../includes/ft_ls.h"
 
-static int count_argc(int argc, char **argv)
+static int count_argc(int argc, char **argv, t_union un)
 {
     int i;
     int c;
@@ -25,7 +25,7 @@ static int count_argc(int argc, char **argv)
             ++c;
         ++i;
     }
-    return (c);
+    return (c - find_length_of_list(un.error));
 }
 
 void		ft_ls(int argc, char **argv)
@@ -35,18 +35,18 @@ void		ft_ls(int argc, char **argv)
 	set_flag(&un);
 	un.error = NULL;
 	un.data = NULL;
-	un.flag_un.arg = count_argc(argc, argv);
     parse_input(&un, argc, argv);
-    if (un.flag_un.arg)
+    un.flag_un.arg = count_argc(argc, argv, un);
+    if (un.error)
     {
         sort_list_error(&un.error, ascending);
         print_list_error(un.error);
     }
     if (!un.flag_out.R && !un.flag_out.l)
     {
-        if ((count_argc(argc, argv) == 1 && !ft_strcmp(argv[1], ".")) || count_argc(argc, argv) == 0) {
+        if ((un.flag_un.arg == 1 && !ft_strcmp(argv[1], ".")) || un.flag_un.arg == 0)
             un.data = create_data(".");
-        }
+
         main_part(&un);
     }
     if (un.flag_out.R && !un.flag_out.l)
