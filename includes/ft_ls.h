@@ -21,6 +21,9 @@
 # include <sys/ioctl.h>
 # include <fcntl.h>
 # include <unistd.h>
+# include <pwd.h>
+# include <time.h>
+# include <grp.h>
 
 typedef struct		s_flag_out
 {
@@ -93,5 +96,6 @@ t_data				*create_data(char *str);
 void				recursion_helper(t_union *un);
 char				*conc_next_dir(char *prev, char *next);
 void				free_data_container(t_data *head);
+void				print_files_l(t_union *un);
 
 #endif

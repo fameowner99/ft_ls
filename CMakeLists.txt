@@ -17,7 +17,8 @@ add_executable(ft_ls
         srcs/sort_list.c
         srcs/manage_data_container.c
         srcs/print_directory.c
-        srcs/recursion.c)
+        srcs/recursion.c
+        srcs/print_flag_l.c)
 
 add_library(libft STATIC IMPORTED) # Создание статической библиотеки
 set_property(TARGET libft PROPERTY

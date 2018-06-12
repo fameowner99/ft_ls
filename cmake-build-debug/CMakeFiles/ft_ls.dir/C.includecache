@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/fameowner/ft_ls/includes/ft_ls.h
+/Users/vmiachko/ft_ls/includes/ft_ls.h
 ../libft/libft.h
-/home/fameowner/ft_ls/libft/libft.h
+/Users/vmiachko/ft_ls/libft/libft.h
 dirent.h
-/home/fameowner/ft_ls/includes/dirent.h
+/Users/vmiachko/ft_ls/includes/dirent.h
 sys/stat.h
 -
 sys/ioctl.h
@@ -19,66 +19,76 @@ fcntl.h
 -
 unistd.h
 -
+pwd.h
+-
+time.h
+-
+grp.h
+-
 
-/home/fameowner/ft_ls/libft/ft_printf/ft_printf.h
+/Users/vmiachko/ft_ls/libft/ft_printf/ft_printf.h
 ../libft.h
-/home/fameowner/ft_ls/libft/libft.h
+/Users/vmiachko/ft_ls/libft/libft.h
 stdarg.h
 -
 stdlib.h
 -
 
-/home/fameowner/ft_ls/libft/libft.h
+/Users/vmiachko/ft_ls/libft/libft.h
 string.h
 -
 stdlib.h
 -
 ft_printf/ft_printf.h
-/home/fameowner/ft_ls/libft/ft_printf/ft_printf.h
+/Users/vmiachko/ft_ls/libft/ft_printf/ft_printf.h
 stdint.h
 -
 
-/home/fameowner/ft_ls/srcs/flag_tools.c
+/Users/vmiachko/ft_ls/srcs/flag_tools.c
 ../includes/ft_ls.h
-/home/fameowner/ft_ls/includes/ft_ls.h
+/Users/vmiachko/ft_ls/includes/ft_ls.h
 
-/home/fameowner/ft_ls/srcs/ft_ls.c
+/Users/vmiachko/ft_ls/srcs/ft_ls.c
 ../includes/ft_ls.h
-/home/fameowner/ft_ls/includes/ft_ls.h
+/Users/vmiachko/ft_ls/includes/ft_ls.h
 
-/home/fameowner/ft_ls/srcs/main.c
+/Users/vmiachko/ft_ls/srcs/main.c
 ../includes/ft_ls.h
-/home/fameowner/ft_ls/includes/ft_ls.h
+/Users/vmiachko/ft_ls/includes/ft_ls.h
 
-/home/fameowner/ft_ls/srcs/main_part.c
+/Users/vmiachko/ft_ls/srcs/main_part.c
 ../includes/ft_ls.h
-/home/fameowner/ft_ls/includes/ft_ls.h
+/Users/vmiachko/ft_ls/includes/ft_ls.h
 
-/home/fameowner/ft_ls/srcs/manage_data_container.c
+/Users/vmiachko/ft_ls/srcs/manage_data_container.c
 ../includes/ft_ls.h
-/home/fameowner/ft_ls/includes/ft_ls.h
+/Users/vmiachko/ft_ls/includes/ft_ls.h
 
-/home/fameowner/ft_ls/srcs/manage_list_container.c
+/Users/vmiachko/ft_ls/srcs/manage_list_container.c
 ../includes/ft_ls.h
-/home/fameowner/ft_ls/includes/ft_ls.h
+/Users/vmiachko/ft_ls/includes/ft_ls.h
 
-/home/fameowner/ft_ls/srcs/parsing.c
+/Users/vmiachko/ft_ls/srcs/parsing.c
 ../includes/ft_ls.h
-/home/fameowner/ft_ls/includes/ft_ls.h
+/Users/vmiachko/ft_ls/includes/ft_ls.h
 
-/home/fameowner/ft_ls/srcs/print_container.c
+/Users/vmiachko/ft_ls/srcs/print_container.c
 ../includes/ft_ls.h
-/home/fameowner/ft_ls/includes/ft_ls.h
+/Users/vmiachko/ft_ls/includes/ft_ls.h
 
-/home/fameowner/ft_ls/srcs/print_directory.c
+/Users/vmiachko/ft_ls/srcs/print_directory.c
 ../includes/ft_ls.h
-/home/fameowner/ft_ls/includes/ft_ls.h
+/Users/vmiachko/ft_ls/includes/ft_ls.h
 
-/home/fameowner/ft_ls/srcs/recursion.c
+/Users/vmiachko/ft_ls/srcs/print_flag_l.c
 ../includes/ft_ls.h
-/home/fameowner/ft_ls/includes/ft_ls.h
+/Users/vmiachko/ft_ls/includes/ft_ls.h
 
-/home/fameowner/ft_ls/srcs/sort_list.c
+/Users/vmiachko/ft_ls/srcs/recursion.c
 ../includes/ft_ls.h
-/home/fameowner/ft_ls/includes/ft_ls.h
+/Users/vmiachko/ft_ls/includes/ft_ls.h
+
+/Users/vmiachko/ft_ls/srcs/sort_list.c
+../includes/ft_ls.h
+/Users/vmiachko/ft_ls/includes/ft_ls.h
 

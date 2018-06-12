@@ -46,13 +46,16 @@ void		ft_ls(int argc, char **argv)
     {
         if ((un.flag_un.arg == 1 && !ft_strcmp(argv[1], ".")) || un.flag_un.arg == 0)
             un.data = create_data(".");
-
         main_part(&un);
     }
     if (un.flag_out.R && !un.flag_out.l)
     {
         recursion_helper(&un);
     }
+	if (un.flag_out.l && !un.flag_out.R)
+	{
+		print_files_l(&un);
+	}
 
 
 }

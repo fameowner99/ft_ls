@@ -28,7 +28,7 @@ void			print_all(t_data *head, t_union un)
     i = 0;
     while (tmp)
     {
-        if (tmp->str[0] == '.')
+        if (tmp->str && tmp->str[0] == '.')
         {
 			if (un.flag_out.a)
 			{

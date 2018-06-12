@@ -66,7 +66,7 @@ t_data		*create_data(char *str)
 	t_data         *data;
 
 	data = NULL;
-	if (!(dir = opendir (str)))
+	if (!(dir = opendir(str)))
 		return (data);
 	while ((dp = readdir (dir)))
 	{

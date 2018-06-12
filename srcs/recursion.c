@@ -45,10 +45,11 @@ static void    recursion(char *curr_dir, t_union *un)
 	static char 			*next_dir = NULL;
 
     data = create_data(curr_dir);
+	if (!data)
+		return ;
     //sort
 	if (next_dir)
-		ft_printf("\n");
-	ft_printf(BYELLOW"%s:\n"RESET, data->curr_dir);
+		ft_printf(BYELLOW"\n%s:\n"RESET, data->curr_dir);
     print_directory(curr_dir, *un, data);
     tmp = data;
     while (tmp)
@@ -70,7 +71,7 @@ static void    recursion(char *curr_dir, t_union *un)
         }
         tmp = tmp->next;
     }
-	free_data_container(data);
+	//free_data_container(data);
 
 }
 
