@@ -96,6 +96,6 @@ t_data				*create_data(char *str);
 void				recursion_helper(t_union *un);
 char				*conc_next_dir(char *prev, char *next);
 void				free_data_container(t_data *head);
-void				print_files_l(t_union *un);
+void				print_l(t_data *data, int f, t_union un);
 
 #endif

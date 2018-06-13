@@ -96,26 +96,37 @@ static void		print_all_info_l(t_data *tmp, t_data *data)
 	ft_printf(GREEN"%s "RESET, pwd->pw_name);
 	ft_printf(GREEN"%s "RESET, grp->gr_name);
 	ft_printf(RED"%*li "RESET, size, tmp->stat->st_size);
-	str = ctime(&tmp->stat->st_mtimespec.tv_sec);
+	str = ctime(&tmp->stat->st_mtim.tv_sec);
 	ft_printf(BCYAN"%.*s "RESET, ft_strlen(str) - 9, str);
 	ft_printf(GREEN"%s"RESET, tmp->str);
+	ft_printf("\n");
 }
 
-void		print_files_l(t_union *un)
+void		print_l(t_data *data, int f, t_union un)
 {
 	t_data	*tmp;
 
 
-	tmp = un->data;
+	tmp = data;
 	while (tmp)
 	{
-		//if (!tmp->dir)
-		//{
-		print_all_info_l(tmp, un->data);
-
-
-			ft_printf("\n");
-		//}
+		if (f)
+		{
+			if (!tmp->dir)
+			{
+				if (tmp->str && tmp->str[0] == '.')
+					un.flag_out.a ? print_all_info_l(tmp, data) : 0;
+				else
+					print_all_info_l(tmp, data);
+			}
+		}
+		else
+		{
+			if (tmp->str && tmp->str[0] == '.')
+				un.flag_out.a ? print_all_info_l(tmp, data) : 0;
+			else
+				print_all_info_l(tmp, data);
+		}
 		tmp = tmp->next;
 	}
 }

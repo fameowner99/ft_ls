@@ -46,6 +46,11 @@ CMakeFiles/ft_ls.dir/srcs/print_directory.c.o: ../libft/ft_printf/ft_printf.h
 CMakeFiles/ft_ls.dir/srcs/print_directory.c.o: ../libft/libft.h
 CMakeFiles/ft_ls.dir/srcs/print_directory.c.o: ../srcs/print_directory.c
 
+CMakeFiles/ft_ls.dir/srcs/print_directory_l.c.o: ../includes/ft_ls.h
+CMakeFiles/ft_ls.dir/srcs/print_directory_l.c.o: ../libft/ft_printf/ft_printf.h
+CMakeFiles/ft_ls.dir/srcs/print_directory_l.c.o: ../libft/libft.h
+CMakeFiles/ft_ls.dir/srcs/print_directory_l.c.o: ../srcs/print_directory_l.c
+
 CMakeFiles/ft_ls.dir/srcs/print_flag_l.c.o: ../includes/ft_ls.h
 CMakeFiles/ft_ls.dir/srcs/print_flag_l.c.o: ../libft/ft_printf/ft_printf.h
 CMakeFiles/ft_ls.dir/srcs/print_flag_l.c.o: ../libft/libft.h

@@ -54,8 +54,20 @@ void		ft_ls(int argc, char **argv)
     }
 	if (un.flag_out.l && !un.flag_out.R)
 	{
-		print_files_l(&un);
+		if (un.flag_un.arg)
+		{
+			print_l(un.data, 1, un);
+			check_exist_files(&un);
+			print_all_directories(un.data, un);
+		}
+		else
+		{
+			un.data = create_data(".");
+			print_directory(".", un, un.data);
+		}
 	}
+	if (un.flag_out.l && un.flag_out.R)
+	{
 
-
+	}
 }

@@ -15,7 +15,6 @@
 static t_data	*data_container_new(char *str, struct stat *s, char *curr_path)
 {
     t_data		    *res;
-    DIR             *dir;
 
 
     if (!(res = (t_data *)malloc(sizeof(t_data))))
@@ -27,12 +26,8 @@ static t_data	*data_container_new(char *str, struct stat *s, char *curr_path)
 	res->path = conc_next_dir(curr_path, str);
     res->curr_dir = curr_path;
     res->next = NULL;
-    if ((dir = opendir(res->path)))
-        res->dir = 1;
-    else
-        res->dir = 0;
-    if (res->dir)
-		closedir(dir);
+	res->dir = S_ISDIR(res->stat->st_mode);
+
 
     return (res);
 }

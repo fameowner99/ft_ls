@@ -61,12 +61,10 @@ void               print_directory(char *str, t_union un, t_data *data)
     {
         if (!un.flag_un.one_dir && !un.flag_out.R)
             ft_printf(BYELLOW"%s:\n"RESET, str);
-       // sort_list_data(&data, ascending);
-        print_all(data, un);
+		un.flag_out.l ? print_l(data, 0, un) : print_all(data, un);
     }
     else
-        print_all(data, un);
-
+		un.flag_out.l ? print_l(data, 0, un) : print_all(data, un);
 }
 
 void            print_all_directories(t_data *data, t_union un)

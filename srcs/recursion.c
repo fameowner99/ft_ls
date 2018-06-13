@@ -71,8 +71,7 @@ static void    recursion(char *curr_dir, t_union *un)
         }
         tmp = tmp->next;
     }
-	//free_data_container(data);
-
+	free_data_container(data);
 }
 
 void			recursion_helper(t_union *un)
