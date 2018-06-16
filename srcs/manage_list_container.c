@@ -40,6 +40,19 @@ t_container			*container_push_back(t_container *head, char *str)
 	return (head);
 }
 
+void				clear_error_container(t_union *un)
+{
+	t_container		*tmp;
+
+	while (un->error)
+	{
+		tmp = un->error->next;
+		free(un->error->str);
+		free(un->error);
+		un->error = tmp;
+	}
+}
+
 void				print_list_error(t_container *head)
 {
 	t_container		*tmp;

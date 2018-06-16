@@ -6,16 +6,15 @@
 /*   By: vmiachko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 14:54:31 by vmiachko          #+#    #+#             */
-/*   Updated: 2018/06/12 14:54:32 by vmiachko         ###   ########.fr       */
+/*   Updated: 2018/06/16 18:06:20 by vmiachko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
 
-
-static char		get_type_of_file(struct stat s)
+static char			get_type_of_file(struct stat s)
 {
-	s.st_mode = (s.st_mode  & S_IFMT);
+	s.st_mode = (s.st_mode & S_IFMT);
 	if (S_ISREG(s.st_mode))
 		return ('-');
 	else if (S_ISDIR(s.st_mode))
@@ -33,9 +32,9 @@ static char		get_type_of_file(struct stat s)
 	else
 		return ('-');
 }
-void		print_permission(t_data	*data)
-{
 
+void				print_permission(t_data *data)
+{
 	ft_printf(MAGENTA"%c", get_type_of_file(*data->stat));
 	ft_printf((data->stat->st_mode & S_IRUSR) ? "r" : "-");
 	ft_printf((data->stat->st_mode & S_IWUSR) ? "w" : "-");
@@ -45,69 +44,50 @@ void		print_permission(t_data	*data)
 	ft_printf((data->stat->st_mode & S_IXGRP) ? "x" : "-");
 	ft_printf((data->stat->st_mode & S_IROTH) ? "r" : "-");
 	ft_printf((data->stat->st_mode & S_IWOTH) ? "w" : "-");
-	ft_printf((data->stat->st_mode & S_IXOTH) ? "x  "RESET : "-  "RESET);
+	ft_printf((data->stat->st_mode & S_IXOTH) ? "x "RESET : "- "RESET);
 }
-int find_lngth(t_data *data, int v, int *size)
-{
-	int max;
-	t_data *tmp;
-	int 	l;
-	long 	tmp_size;
 
-	max = 0;
+static void			print_total(t_data *data)
+{
+	t_data			*tmp;
+	long int		total;
+
+	total = 0;
 	tmp = data;
 	while (tmp)
 	{
-		l = tmp->stat->st_nlink;
-		v = 0;
-		tmp_size = (long)tmp->stat->st_size;
-		while (l)
-		{
-			l /= 10;
-			++v;
-		}
-		if (v > max)
-			max = v;
-		v = 0;
-		while (tmp_size)
-		{
-			tmp_size /= 10;
-			++v;
-		}
-		if (v > *size)
-			*size = v;
+		total += tmp->stat->st_blocks;
 		tmp = tmp->next;
 	}
-	return (max);
+	ft_printf(BGREEN"total %li\n"RESET, total);
 }
 
-static void		print_all_info_l(t_data *tmp, t_data *data)
+static void			print_all_info_l(t_data *tmp, t_data *data, t_union un)
 {
-	struct passwd *pwd;
+	struct passwd	*pwd;
 	struct group	*grp;
-	char 	*str;
-	int size;
+	char			*str;
 
-	size = 0;
 	grp = getgrgid(tmp->stat->st_gid);
 	pwd = getpwuid(tmp->stat->st_uid);
+	find_lngth(data, &un.table);
 	print_permission(tmp);
-	ft_printf(BCYAN"%*i "RESET, find_lngth(data, 0, &size) ,tmp->stat->st_nlink);
-	ft_printf(GREEN"%s "RESET, pwd->pw_name);
-	ft_printf(GREEN"%s "RESET, grp->gr_name);
-	ft_printf(RED"%*li "RESET, size, tmp->stat->st_size);
-	str = ctime(&tmp->stat->st_mtim.tv_sec);
-	ft_printf(BCYAN"%.*s "RESET, ft_strlen(str) - 9, str);
-	ft_printf(GREEN"%s"RESET, tmp->str);
-	ft_printf("\n");
+	ft_printf(BCYAN"%*i "RESET, un.table.before_link,
+				tmp->stat->st_nlink);
+	ft_printf(GREEN"%*s  "RESET, un.table.before_name, pwd->pw_name);
+	ft_printf(GREEN"%*s "RESET, un.table.before_group, grp->gr_name);
+	ft_printf(RED"%*li "RESET, un.table.before_size, tmp->stat->st_size);
+	str = ctime(&tmp->stat->st_ctimespec.tv_sec);
+	ft_printf(BCYAN"%.*s "RESET, ft_strlen(str) - 12, str + 3);
+	ft_printf(GREEN"%s\n"RESET, tmp->str);
 }
 
-void		print_l(t_data *data, int f, t_union un)
+void				print_l(t_data *data, int f, t_union un)
 {
-	t_data	*tmp;
-
+	t_data			*tmp;
 
 	tmp = data;
+	!f ? print_total(data) : 0;
 	while (tmp)
 	{
 		if (f)
@@ -115,17 +95,17 @@ void		print_l(t_data *data, int f, t_union un)
 			if (!tmp->dir)
 			{
 				if (tmp->str && tmp->str[0] == '.')
-					un.flag_out.a ? print_all_info_l(tmp, data) : 0;
+					un.flag_out.a ? print_all_info_l(tmp, data, un) : 0;
 				else
-					print_all_info_l(tmp, data);
+					print_all_info_l(tmp, data, un);
 			}
 		}
 		else
 		{
 			if (tmp->str && tmp->str[0] == '.')
-				un.flag_out.a ? print_all_info_l(tmp, data) : 0;
+				un.flag_out.a ? print_all_info_l(tmp, data, un) : 0;
 			else
-				print_all_info_l(tmp, data);
+				print_all_info_l(tmp, data, un);
 		}
 		tmp = tmp->next;
 	}

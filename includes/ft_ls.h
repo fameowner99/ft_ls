@@ -6,7 +6,7 @@
 /*   By: vmiachko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/04 17:05:10 by vmiachko          #+#    #+#             */
-/*   Updated: 2018/06/07 14:01:44 by vmiachko         ###   ########.fr       */
+/*   Updated: 2018/06/16 14:47:53 by vmiachko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,22 @@ typedef struct 			s_data
 	struct s_data		*next;
 }						t_data;
 
+
+typedef struct		s_table
+{
+	int				before_link;
+	int 			before_name;
+	int 			before_group;
+	long 			before_size;
+}					t_table;
+
 typedef struct		s_union
 {
 	t_flag_out		flag_out;
 	t_flag_un		flag_un;
 	t_container		*error;
 	t_data			*data;
+	t_table			table;
 
 }					t_union;
 
@@ -73,6 +83,7 @@ typedef struct		s_union
  ** container valid will contain all valid directories which content should be print
 */
 
+
 void				set_flag(t_union *un);
 void				ft_ls(int argc, char **argv);
 void				parse_input(t_union *un, int argc, char **argv);
@@ -80,12 +91,12 @@ t_container			*container_push_back(t_container *head, char *str);
 void				sort_list_error(t_container **head, int (*cmp)(char*, char*));
 void				print_list_error(t_container *head);
 int					ascending(char *str1, char *str2);
-void				main_part(t_union *un);
+void				main_part(t_union *un, char **argv);
 void				print_files(t_data *head, t_union un);
-t_data				*data_container_push_back(t_data *head, char *str, struct stat *s, char *curr_path);
+t_data				*data_container_push_back(t_data *head, char *str,char *curr_path);
 void	    		sort_list_data(t_data **head, int (*cmp)(char*, char*));
 int					find_length_of_list(t_container *lst);
-int					find_number_of_columns();
+int					find_number_of_columns(void);
 int					find_max_length(t_data *head, t_union un);
 int					find_length_of_column(int min);
 void				print_all(t_data *head, t_union un);
@@ -97,5 +108,7 @@ void				recursion_helper(t_union *un);
 char				*conc_next_dir(char *prev, char *next);
 void				free_data_container(t_data *head);
 void				print_l(t_data *data, int f, t_union un);
+void				find_lngth(t_data *data, t_table *table);
+void				clear_error_container(t_union *un);
 
 #endif

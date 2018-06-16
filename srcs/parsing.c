@@ -6,15 +6,15 @@
 /*   By: vmiachko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/05 13:54:45 by vmiachko          #+#    #+#             */
-/*   Updated: 2018/06/06 18:36:47 by vmiachko         ###   ########.fr       */
+/*   Updated: 2018/06/16 14:35:48 by vmiachko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
 
-int		prev_check_flag(t_union *un, char *str)
+int					prev_check_flag(t_union *un, char *str)
 {
-	int	i;
+	int				i;
 
 	if (!str || str[0] != '-')
 		return (0);
@@ -32,12 +32,11 @@ int		prev_check_flag(t_union *un, char *str)
 		++i;
 	}
 	return (1);
-
 }
 
-int		check_flag(t_union *un, char *str)
+int					check_flag(t_union *un, char *str)
 {
-	int	i;
+	int				i;
 
 	if (!prev_check_flag(un, str))
 		return (0);
@@ -61,39 +60,45 @@ int		check_flag(t_union *un, char *str)
 	return (1);
 }
 
-void	parse_input(t_union *un, int argc, char **argv)
+static inline void	print_usage(char *str)
+{
+	ft_printf(RED"ft_ls: illegal option -- %s\n", str + 1);
+	ft_printf("usage: [-Ralrt] [file ...]\n"RESET);
+}
+
+static inline void	dir(int fd, t_union *un, char *str)
+{
+	close(fd);
+	un->flag_un.found_dir = 1;
+	un->data = data_container_push_back(un->data,
+		str, ft_strdup("."));
+}
+
+void				parse_input(t_union *un, int argc, char **argv)
 {
 	int	i;
 	int	fd;
-	struct stat			*s;
 
 	i = 1;
 	while (i < argc)
-	{	
+	{
 		if ((fd = open(argv[i], O_RDONLY) < 0))
-		{	
+		{
 			if (!un->flag_un.found_dir && !check_flag(un, argv[i]))
+			{
+				if (!un->data && !un->error && argv[i][0] && argv[i][0] == '-')
 				{
-					if (!un->data && !un->error && argv[i][0] && argv[i][0] == '-')
-					{
-						ft_printf(RED"ft_ls: illegal option -- %s\n"RESET, argv[i] + 1);
-						ft_printf(RED"usage: [-Ralrt] [file ...]\n"RESET);
-						exit(11);
-					}
-					else
-						un->error = container_push_back(un->error, argv[i]);
+					print_usage(argv[i]);
+					exit(666);
 				}
+				else
+					un->error = container_push_back(un->error, argv[i]);
+			}
 			else if (un->flag_un.found_dir)
 				un->error = container_push_back(un->error, argv[i]);
 		}
 		else
-		{
-			close(fd);
-			un->flag_un.found_dir = 1;
-            s = (struct stat *)malloc(sizeof(struct stat));
-			stat(argv[i], s);
-			un->data = data_container_push_back(un->data, argv[i], s, ft_strdup("."));
-		}
+			dir(fd, un, argv[i]);
 		++i;
 	}
 }

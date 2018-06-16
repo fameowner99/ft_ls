@@ -19,7 +19,7 @@ add_executable(ft_ls
         srcs/print_directory.c
         srcs/recursion.c
         srcs/print_flag_l.c
-        srcs/print_directory_l.c)
+        srcs/flag_l_handler.c)
 
 add_library(libft STATIC IMPORTED) # Создание статической библиотеки
 set_property(TARGET libft PROPERTY

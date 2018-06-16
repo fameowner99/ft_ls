@@ -11,7 +11,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ft_ls.dir/srcs/print_directory.c.o"
   "CMakeFiles/ft_ls.dir/srcs/recursion.c.o"
   "CMakeFiles/ft_ls.dir/srcs/print_flag_l.c.o"
-  "CMakeFiles/ft_ls.dir/srcs/print_directory_l.c.o"
+  "CMakeFiles/ft_ls.dir/srcs/flag_l_handler.c.o"
   "ft_ls.pdb"
   "ft_ls"
 )
