@@ -71,7 +71,7 @@ static inline void	dir(int fd, t_union *un, char *str)
 	close(fd);
 	un->flag_un.found_dir = 1;
 	un->data = data_container_push_back(un->data,
-		str, ft_strdup("."));
+		str, ".");
 }
 
 void				parse_input(t_union *un, int argc, char **argv)

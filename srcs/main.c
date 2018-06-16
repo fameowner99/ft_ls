@@ -15,7 +15,5 @@
 int		main(int argc, char **argv)
 {
 	ft_ls(argc, argv);
-	system("leaks -quiet ft_ls");
-	exit(666);
 	return (0);
 }

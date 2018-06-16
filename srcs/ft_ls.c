@@ -44,11 +44,14 @@ static inline void	different_flags(t_union un)
 		{
 			un.data = create_data(".");
 			print_directory(".", un, un.data);
+			if (un.data)
+				free_data_container(un.data);
 		}
 	}
 	if (un.flag_out.l && un.flag_out.R)
 	{
 	}
+
 }
 
 void				ft_ls(int argc, char **argv)
@@ -58,6 +61,9 @@ void				ft_ls(int argc, char **argv)
 	set_flag(&un);
 	un.error = NULL;
 	un.data = NULL;
+	un.flag_un.found_dir = 0;
+	un.flag_un.found_file = 0;
+	un.flag_un.one_dir = 0;
 	parse_input(&un, argc, argv);
 	un.flag_un.arg = count_argc(argc, argv, un);
 	if (un.error)
@@ -70,9 +76,11 @@ void				ft_ls(int argc, char **argv)
 	{
 		if ((un.flag_un.arg == 1 && !ft_strcmp(argv[1], "."))
 				|| un.flag_un.arg == 0)
-			un.data = create_data(ft_strdup("."));
+			un.data = create_data(".");
 		main_part(&un, argv);
-		free_data_container(un.data);
 	}
 	different_flags(un);
+	if (un.data)
+		free_data_container(un.data);
+
 }

@@ -23,9 +23,11 @@ static t_data		*data_container_new(char *str, char *curr_path)
 		return (NULL);
 	if (!(s = (struct stat *)malloc(sizeof(struct stat))))
 		return (NULL);
+	if (!(res->curr_dir = (char *)ft_memalloc(ft_strlen(curr_path) + 1)))
+		return (NULL);
 	res->str = ft_strcpy(res->str, str);
 	res->path = conc_next_dir(curr_path, str);
-	res->curr_dir = curr_path;
+	res->curr_dir = ft_strcpy(res->curr_dir, curr_path);
 	stat(res->path, s);
 	res->stat = s;
 	res->next = NULL;
@@ -61,15 +63,12 @@ void				free_data_container(t_data *head)
 		free(head->str);
 		free(head->stat);
 		free(head->path);
+		free(head->curr_dir);
 		head->str = NULL;
 		head->stat = NULL;
 		head->path = NULL;
 		head->next = NULL;
-		if (!i && head->curr_dir)
-		{
-			free(head->curr_dir);
-			head->curr_dir = NULL;
-		}
+		head->curr_dir = NULL;
 		free(head);
 		head = tmp;
 		++i;

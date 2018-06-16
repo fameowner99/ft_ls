@@ -69,5 +69,6 @@ t_data				*create_data(char *str)
 		return (data);
 	while ((dp = readdir(dir)))
 		data = data_container_push_back(data, dp->d_name, str);
+	closedir(dir);
 	return (data);
 }

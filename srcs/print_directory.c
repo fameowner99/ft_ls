@@ -80,6 +80,7 @@ void			print_all_directories(t_data *data, t_union un)
 				ft_printf("\n");
 			dir_data = create_data(tmp->str);
 			print_directory(tmp->str, un, dir_data);
+			free_data_container(dir_data);
 			i = 1;
 		}
 		tmp = tmp->next;
