@@ -6,7 +6,7 @@
 /*   By: vmiachko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/05 13:06:06 by vmiachko          #+#    #+#             */
-/*   Updated: 2018/06/16 13:43:54 by vmiachko         ###   ########.fr       */
+/*   Updated: 2018/06/17 17:39:14 by vmiachko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,12 @@
 void				set_flag(t_union *un)
 {
 	un->flag_out.l = 0;
-	un->flag_out.R = 0;
+	un->flag_out.r_big = 0;
 	un->flag_out.a = 0;
 	un->flag_out.r = 0;
 	un->flag_out.t = 0;
+	un->flag_out.f = 0;
+	un->flag_out.one = 0;
 	un->flag_un.found_dir = 0;
 	un->flag_un.error_after_dir = 0;
 }
@@ -71,4 +73,12 @@ t_data				*create_data(char *str)
 		data = data_container_push_back(data, dp->d_name, str);
 	closedir(dir);
 	return (data);
+}
+
+int					find_number_of_columns(void)
+{
+	struct winsize	w;
+
+ 	ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
+	return (w.ws_col);
 }

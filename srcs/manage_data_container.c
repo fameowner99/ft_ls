@@ -28,7 +28,7 @@ static t_data		*data_container_new(char *str, char *curr_path)
 	res->str = ft_strcpy(res->str, str);
 	res->path = conc_next_dir(curr_path, str);
 	res->curr_dir = ft_strcpy(res->curr_dir, curr_path);
-	stat(res->path, s);
+	lstat(res->path, s);
 	res->stat = s;
 	res->next = NULL;
 	res->dir = S_ISDIR(res->stat->st_mode);
@@ -54,9 +54,7 @@ t_data				*data_container_push_back(t_data *head,
 void				free_data_container(t_data *head)
 {
 	t_data			*tmp;
-	int				i;
 
-	i = 0;
 	while (head)
 	{
 		tmp = head->next;
@@ -71,6 +69,5 @@ void				free_data_container(t_data *head)
 		head->curr_dir = NULL;
 		free(head);
 		head = tmp;
-		++i;
 	}
 }

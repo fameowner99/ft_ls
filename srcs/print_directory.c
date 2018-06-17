@@ -6,24 +6,33 @@
 /*   By: vmiachko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/09 13:47:01 by vmiachko          #+#    #+#             */
-/*   Updated: 2018/06/16 15:37:43 by vmiachko         ###   ########.fr       */
+/*   Updated: 2018/06/17 17:43:30 by vmiachko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
 
-static void		print_f(char *str, t_union un, int s, t_data *tmp)
+static void			print_f(t_union un, int s, t_data *tmp)
 {
 	if (tmp->str[0] == '.')
 	{
-		if (un.flag_out.a)
+		if (un.flag_out.a || un.flag_out.f)
 			ft_printf(GREEN"%-*s "RESET, s, tmp->str);
 	}
 	else
 		ft_printf(GREEN"%-*s "RESET, s, tmp->str);
 }
 
-void			print_all(t_data *head, t_union un)
+static inline void	new_line(int *i, int c, t_data *tmp)
+{
+	if (*i == c)
+	{
+		*i = 0;
+		tmp ? ft_printf("\n") : 0;
+	}
+}
+
+void				print_all(t_data *head, t_union un)
 {
 	t_data		*tmp;
 	int			s;
@@ -31,32 +40,29 @@ void			print_all(t_data *head, t_union un)
 	int			c;
 
 	tmp = head;
-	s = find_length_of_column(find_max_length(head, un));
-	c = (find_number_of_columns() + find_max_length(head, un) - s) / (s + 1);
-	if (c == 0)
-		c = 1;
+	s = find_length_of_column(find_max_length(head));
+	c = (find_number_of_columns() +
+			find_max_length(head) - s) / (s + 1);
+	(c == 0 || un.flag_out.one) ? c = 1 : 0;
 	i = 0;
 	while (tmp)
 	{
-		print_f(tmp->str, un, s, tmp);
-		if (!(!un.flag_out.a && tmp->str[0] == '.'))
+		print_f(un, s, tmp);
+		if (!((!un.flag_out.a && tmp->str[0] == '.')
+					&& (!un.flag_out.f && tmp->str[0])))
 			++i;
 		tmp = tmp->next;
-		if (i == c)
-		{
-			i = 0;
-			if (tmp)
-				ft_printf("\n");
-		}
+		new_line(&i, c, tmp);
 	}
-	ft_printf("\n");
+	if (!un.flag_out.r_big)
+		write(1, "\n", 1);
 }
 
-void			print_directory(char *str, t_union un, t_data *data)
+void				print_directory(char *str, t_union un, t_data *data)
 {
 	if (un.flag_un.arg)
 	{
-		if (!un.flag_un.one_dir && !un.flag_out.R)
+		if (!un.flag_un.one_dir && !un.flag_out.r_big)
 			ft_printf(BYELLOW"%s:\n"RESET, str);
 		un.flag_out.l ? print_l(data, 0, un) : print_all(data, un);
 	}
@@ -64,7 +70,7 @@ void			print_directory(char *str, t_union un, t_data *data)
 		un.flag_out.l ? print_l(data, 0, un) : print_all(data, un);
 }
 
-void			print_all_directories(t_data *data, t_union un)
+void				print_all_directories(t_data *data, t_union un)
 {
 	t_data		*tmp;
 	int			i;
@@ -77,8 +83,9 @@ void			print_all_directories(t_data *data, t_union un)
 		if (tmp->dir)
 		{
 			if (i || un.flag_un.found_file)
-				ft_printf("\n");
+				write(1, "\n", 1);
 			dir_data = create_data(tmp->str);
+			choose_sort(&dir_data, un);
 			print_directory(tmp->str, un, dir_data);
 			free_data_container(dir_data);
 			i = 1;

@@ -6,7 +6,7 @@
 /*   By: vmiachko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 14:54:31 by vmiachko          #+#    #+#             */
-/*   Updated: 2018/06/16 18:06:20 by vmiachko         ###   ########.fr       */
+/*   Updated: 2018/06/17 17:58:09 by vmiachko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void				print_permission(t_data *data)
 	ft_printf((data->stat->st_mode & S_IXOTH) ? "x "RESET : "- "RESET);
 }
 
-static void			print_total(t_data *data)
+static void			print_total(t_data *data, t_union un)
 {
 	t_data			*tmp;
 	long int		total;
@@ -56,17 +56,25 @@ static void			print_total(t_data *data)
 	tmp = data;
 	while (tmp)
 	{
-		total += tmp->stat->st_blocks;
+		if (tmp->str[0] == '.')
+		{
+			if (un.flag_out.a || un.flag_out.f)
+				total += tmp->stat->st_blocks;
+		}
+		else
+			total += tmp->stat->st_blocks;
 		tmp = tmp->next;
 	}
-	ft_printf(BGREEN"total %li\n"RESET, total);
+	if (total)
+		ft_printf(BGREEN"total %li\n"RESET, total);
 }
 
-static void			print_all_info_l(t_data *tmp, t_data *data, t_union un)
+static void			info_l(t_data *tmp, t_data *data, t_union un)
 {
 	struct passwd	*pwd;
 	struct group	*grp;
 	char			*str;
+	char			*buff;
 
 	grp = getgrgid(tmp->stat->st_gid);
 	pwd = getpwuid(tmp->stat->st_uid);
@@ -77,9 +85,17 @@ static void			print_all_info_l(t_data *tmp, t_data *data, t_union un)
 	ft_printf(GREEN"%*s  "RESET, un.table.before_name, pwd->pw_name);
 	ft_printf(GREEN"%*s "RESET, un.table.before_group, grp->gr_name);
 	ft_printf(RED"%*li "RESET, un.table.before_size, tmp->stat->st_size);
-	str = ctime(&tmp->stat->st_ctim.tv_sec);
+	str = ctime(&tmp->stat->st_ctimespec.tv_sec);
 	ft_printf(BCYAN"%.*s "RESET, ft_strlen(str) - 12, str + 3);
-	ft_printf(GREEN"%s\n"RESET, tmp->str);
+	ft_printf(GREEN"%s"RESET, tmp->str);
+	if ((S_ISLNK(tmp->stat->st_mode)))
+	{
+		buff = ft_memalloc(500);
+		readlink(tmp->path, buff, 500);
+		ft_printf(" -> %s", buff);
+		free(buff);
+	}
+	ft_printf("\n");
 }
 
 void				print_l(t_data *data, int f, t_union un)
@@ -87,7 +103,7 @@ void				print_l(t_data *data, int f, t_union un)
 	t_data			*tmp;
 
 	tmp = data;
-	!f ? print_total(data) : 0;
+	!f ? print_total(data, un) : 0;
 	while (tmp)
 	{
 		if (f)
@@ -95,17 +111,17 @@ void				print_l(t_data *data, int f, t_union un)
 			if (!tmp->dir)
 			{
 				if (tmp->str && tmp->str[0] == '.')
-					un.flag_out.a ? print_all_info_l(tmp, data, un) : 0;
+					un.flag_out.a ? info_l(tmp, data, un) : 0;
 				else
-					print_all_info_l(tmp, data, un);
+					info_l(tmp, data, un);
 			}
 		}
 		else
 		{
 			if (tmp->str && tmp->str[0] == '.')
-				un.flag_out.a ? print_all_info_l(tmp, data, un) : 0;
+				un.flag_out.a ? info_l(tmp, data, un) : 0;
 			else
-				print_all_info_l(tmp, data, un);
+				info_l(tmp, data, un);
 		}
 		tmp = tmp->next;
 	}

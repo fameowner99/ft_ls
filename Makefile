@@ -2,14 +2,14 @@ NAME = ft_ls
 
 CC = gcc
 
-FLAGS = 
+FLAGS = -Wall -Wextra -Werror 
 
 RM = rm -f
 
 SRC = srcs/main.c srcs/ft_ls.c srcs/flag_tools.c srcs/parsing.c srcs/manage_list_container.c \
 		srcs/sort_list.c srcs/main_part.c srcs/print_container.c srcs/manage_data_container.c \
-			srcs/print_directory.c srcs/recursion.c srcs/recursion_handler.c \
-				srcs/print_flag_l.c srcs/flag_l_handler.c 
+			srcs/print_directory.c srcs/recursion.c  \
+				srcs/print_flag_l.c srcs/flag_l_handler.c srcs/types_of_sort.c 
 
 LIB_DIR = libft/
 

@@ -12,6 +12,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ft_ls.dir/srcs/recursion.c.o"
   "CMakeFiles/ft_ls.dir/srcs/print_flag_l.c.o"
   "CMakeFiles/ft_ls.dir/srcs/flag_l_handler.c.o"
+  "CMakeFiles/ft_ls.dir/srcs/types_of_sort.c.o"
   "ft_ls.pdb"
   "ft_ls"
 )

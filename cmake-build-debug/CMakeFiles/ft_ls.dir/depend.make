@@ -66,3 +66,8 @@ CMakeFiles/ft_ls.dir/srcs/sort_list.c.o: ../libft/ft_printf/ft_printf.h
 CMakeFiles/ft_ls.dir/srcs/sort_list.c.o: ../libft/libft.h
 CMakeFiles/ft_ls.dir/srcs/sort_list.c.o: ../srcs/sort_list.c
 
+CMakeFiles/ft_ls.dir/srcs/types_of_sort.c.o: ../includes/ft_ls.h
+CMakeFiles/ft_ls.dir/srcs/types_of_sort.c.o: ../libft/ft_printf/ft_printf.h
+CMakeFiles/ft_ls.dir/srcs/types_of_sort.c.o: ../libft/libft.h
+CMakeFiles/ft_ls.dir/srcs/types_of_sort.c.o: ../srcs/types_of_sort.c
+

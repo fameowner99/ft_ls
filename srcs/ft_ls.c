@@ -6,7 +6,7 @@
 /*   By: vmiachko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/05 13:08:40 by vmiachko          #+#    #+#             */
-/*   Updated: 2018/06/16 14:06:06 by vmiachko         ###   ########.fr       */
+/*   Updated: 2018/06/17 16:56:45 by vmiachko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int			count_argc(int argc, char **argv, t_union un)
 	i = 1;
 	while (i < argc)
 	{
-		if (argv[i][0] != '-')
+		if (c || argv[i][0] != '-')
 			++c;
 		++i;
 	}
@@ -30,9 +30,11 @@ static int			count_argc(int argc, char **argv, t_union un)
 
 static inline void	different_flags(t_union un)
 {
-	if (un.flag_out.R && !un.flag_out.l)
+	if (un.data)
+		choose_sort(&un.data, un);
+	if (un.flag_out.r_big)
 		recursion_helper(&un);
-	if (un.flag_out.l && !un.flag_out.R)
+	if (un.flag_out.l && !un.flag_out.r_big)
 	{
 		if (un.flag_un.arg)
 		{
@@ -43,15 +45,21 @@ static inline void	different_flags(t_union un)
 		else
 		{
 			un.data = create_data(".");
+			choose_sort(&un.data, un);
 			print_directory(".", un, un.data);
 			if (un.data)
 				free_data_container(un.data);
 		}
 	}
-	if (un.flag_out.l && un.flag_out.R)
-	{
-	}
+}
 
+static void			set_v(t_union *un)
+{
+	un->error = NULL;
+	un->data = NULL;
+	un->flag_un.found_dir = 0;
+	un->flag_un.found_file = 0;
+	un->flag_un.one_dir = 0;
 }
 
 void				ft_ls(int argc, char **argv)
@@ -59,28 +67,26 @@ void				ft_ls(int argc, char **argv)
 	t_union	un;
 
 	set_flag(&un);
-	un.error = NULL;
-	un.data = NULL;
-	un.flag_un.found_dir = 0;
-	un.flag_un.found_file = 0;
-	un.flag_un.one_dir = 0;
+	set_v(&un);
 	parse_input(&un, argc, argv);
 	un.flag_un.arg = count_argc(argc, argv, un);
 	if (un.error)
 	{
-		sort_list_error(&un.error, ascending);
+		sort_list_error(&un.error, ascending_er);
 		print_list_error(un.error);
 		clear_error_container(&un);
+		if (un.flag_un.arg == 0)
+			return ;
 	}
-	if (!un.flag_out.R && !un.flag_out.l)
+	if (!un.flag_out.r_big && !un.flag_out.l)
 	{
 		if ((un.flag_un.arg == 1 && !ft_strcmp(argv[1], "."))
 				|| un.flag_un.arg == 0)
 			un.data = create_data(".");
+		choose_sort(&un.data, un);
 		main_part(&un, argv);
 	}
 	different_flags(un);
 	if (un.data)
 		free_data_container(un.data);
-
 }
