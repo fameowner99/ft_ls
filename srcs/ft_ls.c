@@ -62,6 +62,25 @@ static void			set_v(t_union *un)
 	un->flag_un.one_dir = 0;
 }
 
+int					check_if_empty_dir(t_data *data, t_union un)
+{
+	t_data			*tmp;
+	int				c;
+
+	c = 0;
+	tmp = data;
+	while (tmp)
+	{
+		++c;
+		tmp = tmp->next;
+	}
+	if ((un.flag_out.a || un.flag_out.f) && c)
+		return (1);
+	if (!un.flag_out.a && !un.flag_out.f && c > 2)
+		return (1);
+	return (0);
+}
+
 void				ft_ls(int argc, char **argv)
 {
 	t_union	un;

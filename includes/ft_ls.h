@@ -121,5 +121,6 @@ int						ascending_time(t_data tmp1, t_data tmp2);
 void					choose_sort(t_data **data, t_union un);
 int						ascending_time_r(t_data tmp1, t_data tmp2);
 void					recursion(char *curr_dir, t_union *un, char *next_dir);
+int						check_if_empty_dir(t_data *data, t_union un);
 
 #endif

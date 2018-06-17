@@ -37,10 +37,10 @@ int				ascending_time(t_data tmp1, t_data tmp2)
 {
 	long int res;
 
-	res = tmp1.stat->st_ctimespec.tv_sec - tmp2.stat->st_ctimespec.tv_sec;
+	res = tmp1.stat->st_ctim.tv_sec - tmp2.stat->st_ctim.tv_sec;
 	if (!res)
 	{
-		res = tmp1.stat->st_ctimespec.tv_nsec - tmp2.stat->st_ctimespec.tv_nsec;
+		res = tmp1.stat->st_ctim.tv_nsec - tmp2.stat->st_ctim.tv_nsec;
 		if (!res)
 			return (ascending(tmp1, tmp2));
 		return (res > 0 ? 1 : 0);
@@ -52,10 +52,10 @@ int				ascending_time_r(t_data tmp1, t_data tmp2)
 {
 	long int res;
 
-	res = tmp1.stat->st_ctimespec.tv_sec - tmp2.stat->st_ctimespec.tv_sec;
+	res = tmp1.stat->st_ctim.tv_sec - tmp2.stat->st_ctim.tv_sec;
 	if (!res)
 	{
-		res = tmp1.stat->st_ctimespec.tv_nsec - tmp2.stat->st_ctimespec.tv_nsec;
+		res = tmp1.stat->st_ctim.tv_nsec - tmp2.stat->st_ctim.tv_nsec;
 		if (!res)
 			return (ascending(tmp2, tmp1));
 		return (res > 0 ? 0 : 1);

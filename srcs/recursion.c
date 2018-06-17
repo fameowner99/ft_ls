@@ -63,15 +63,19 @@ void				recursion(char *curr_dir, t_union *un, char *next_dir)
 {
 	t_data			*tmp;
 	t_data			*data;
+	static int 		i = 0;
 
 	data = create_data(curr_dir);
 	choose_sort(&data, *un);
 	if (!data)
 		return ;
-	ft_printf("\n");
-	ft_printf(BYELLOW"%s:\n"RESET, data->curr_dir);
+	if (i || un->flag_un.found_file)
+		ft_printf("\n");
+	un->flag_un.found_file = 0;
+	(i || un->flag_un.arg) ? ft_printf(BYELLOW"%s:\n"RESET, data->curr_dir) : 0;
 	print_directory(curr_dir, *un, data);
 	tmp = data;
+	i = 1;
 	while (tmp)
 	{
 		if (tmp->dir && tmp->str && ft_strcmp(tmp->str, "..")
@@ -91,6 +95,7 @@ void				recursion_helper(t_union *un)
 	else
 	{
 		tmp = un->data;
+		check_exist_files(un);
 		print_files(un->data, *un);
 		while (tmp)
 		{

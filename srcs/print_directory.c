@@ -54,7 +54,7 @@ void				print_all(t_data *head, t_union un)
 		tmp = tmp->next;
 		new_line(&i, c, tmp);
 	}
-	if (!un.flag_out.r_big)
+	if (check_if_empty_dir(head, un))
 		write(1, "\n", 1);
 }
 

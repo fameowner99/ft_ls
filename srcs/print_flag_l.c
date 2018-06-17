@@ -85,7 +85,7 @@ static void			info_l(t_data *tmp, t_data *data, t_union un)
 	ft_printf(GREEN"%*s  "RESET, un.table.before_name, pwd->pw_name);
 	ft_printf(GREEN"%*s "RESET, un.table.before_group, grp->gr_name);
 	ft_printf(RED"%*li "RESET, un.table.before_size, tmp->stat->st_size);
-	str = ctime(&tmp->stat->st_ctimespec.tv_sec);
+	str = ctime(&tmp->stat->st_ctim.tv_sec);
 	ft_printf(BCYAN"%.*s "RESET, ft_strlen(str) - 12, str + 3);
 	ft_printf(GREEN"%s"RESET, tmp->str);
 	if ((S_ISLNK(tmp->stat->st_mode)))

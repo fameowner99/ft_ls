@@ -44,7 +44,7 @@ static void			print_f(t_union un, int s, t_data *tmp)
 {
 	if (tmp->str[0] == '.')
 	{
-		if (un.flag_out.a)
+		if (un.flag_out.a || un.flag_out.f)
 			ft_printf(GREEN"%-*s "RESET, s, tmp->str);
 	}
 	else
@@ -75,11 +75,16 @@ void				print_files(t_data *head, t_union un)
 	i = 0;
 	while (tmp)
 	{
-		!tmp->dir ? print_f(un, s, tmp) : 0;
-		!(!un.flag_out.a && tmp->str[0] == '.') ? ++i : 0;
+		if (!tmp->dir)
+		{
+			print_f(un, s, tmp);
+			if (!((!un.flag_out.a && tmp->str[0] == '.')
+				  && (!un.flag_out.f && tmp->str[0])))
+				++i;
+			new_line(&i, c, tmp);
+		}
 		tmp = tmp->next;
-		new_line(&i, c, tmp);
 	}
-	if (un.flag_un.found_dir && un.flag_un.found_file)
+	if (un.flag_un.found_dir && un.flag_un.found_file && !un.flag_out.one)
 		ft_printf("\n");
 }

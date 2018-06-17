@@ -8,125 +8,123 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/vmiachko/ft_ls/cmake-build-debug"/>
+				<Option working_dir="/home/fameowner/ft_ls/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/vmiachko/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/vmiachko/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/vmiachko/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/vmiachko/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/fameowner/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/fameowner/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/fameowner/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/fameowner/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/vmiachko/ft_ls/cmake-build-debug"/>
+				<Option working_dir="/home/fameowner/ft_ls/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/vmiachko/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/vmiachko/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/vmiachko/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/vmiachko/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/fameowner/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/fameowner/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/fameowner/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/fameowner/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/vmiachko/ft_ls/cmake-build-debug"/>
+				<Option working_dir="/home/fameowner/ft_ls/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/vmiachko/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/vmiachko/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/vmiachko/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/vmiachko/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/fameowner/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/fameowner/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/fameowner/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/fameowner/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ft_ls">
-				<Option output="/Users/vmiachko/ft_ls/cmake-build-debug/ft_ls" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/vmiachko/ft_ls/cmake-build-debug"/>
+				<Option output="/home/fameowner/ft_ls/cmake-build-debug/ft_ls" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/fameowner/ft_ls/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/vmiachko/ft_ls/libft"/>
-					<Add directory="/Users/vmiachko/ft_ls/includes"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/home/fameowner/ft_ls/libft"/>
+					<Add directory="/home/fameowner/ft_ls/includes"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/vmiachko/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 ft_ls"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/vmiachko/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/vmiachko/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/vmiachko/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/fameowner/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 ft_ls"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/fameowner/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/fameowner/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/fameowner/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ft_ls/fast">
-				<Option output="/Users/vmiachko/ft_ls/cmake-build-debug/ft_ls" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/vmiachko/ft_ls/cmake-build-debug"/>
+				<Option output="/home/fameowner/ft_ls/cmake-build-debug/ft_ls" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/fameowner/ft_ls/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/vmiachko/ft_ls/libft"/>
-					<Add directory="/Users/vmiachko/ft_ls/includes"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/home/fameowner/ft_ls/libft"/>
+					<Add directory="/home/fameowner/ft_ls/includes"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/vmiachko/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 ft_ls/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/vmiachko/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/vmiachko/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/vmiachko/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/fameowner/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 ft_ls/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/fameowner/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/fameowner/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/fameowner/ft_ls/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/vmiachko/ft_ls/srcs/flag_l_handler.c">
+		<Unit filename="/home/fameowner/ft_ls/srcs/flag_l_handler.c">
 			<Option target="ft_ls"/>
 		</Unit>
-		<Unit filename="/Users/vmiachko/ft_ls/srcs/flag_tools.c">
+		<Unit filename="/home/fameowner/ft_ls/srcs/flag_tools.c">
 			<Option target="ft_ls"/>
 		</Unit>
-		<Unit filename="/Users/vmiachko/ft_ls/srcs/ft_ls.c">
+		<Unit filename="/home/fameowner/ft_ls/srcs/ft_ls.c">
 			<Option target="ft_ls"/>
 		</Unit>
-		<Unit filename="/Users/vmiachko/ft_ls/srcs/main.c">
+		<Unit filename="/home/fameowner/ft_ls/srcs/main.c">
 			<Option target="ft_ls"/>
 		</Unit>
-		<Unit filename="/Users/vmiachko/ft_ls/srcs/main_part.c">
+		<Unit filename="/home/fameowner/ft_ls/srcs/main_part.c">
 			<Option target="ft_ls"/>
 		</Unit>
-		<Unit filename="/Users/vmiachko/ft_ls/srcs/manage_data_container.c">
+		<Unit filename="/home/fameowner/ft_ls/srcs/manage_data_container.c">
 			<Option target="ft_ls"/>
 		</Unit>
-		<Unit filename="/Users/vmiachko/ft_ls/srcs/manage_list_container.c">
+		<Unit filename="/home/fameowner/ft_ls/srcs/manage_list_container.c">
 			<Option target="ft_ls"/>
 		</Unit>
-		<Unit filename="/Users/vmiachko/ft_ls/srcs/parsing.c">
+		<Unit filename="/home/fameowner/ft_ls/srcs/parsing.c">
 			<Option target="ft_ls"/>
 		</Unit>
-		<Unit filename="/Users/vmiachko/ft_ls/srcs/print_container.c">
+		<Unit filename="/home/fameowner/ft_ls/srcs/print_container.c">
 			<Option target="ft_ls"/>
 		</Unit>
-		<Unit filename="/Users/vmiachko/ft_ls/srcs/print_directory.c">
+		<Unit filename="/home/fameowner/ft_ls/srcs/print_directory.c">
 			<Option target="ft_ls"/>
 		</Unit>
-		<Unit filename="/Users/vmiachko/ft_ls/srcs/print_flag_l.c">
+		<Unit filename="/home/fameowner/ft_ls/srcs/print_flag_l.c">
 			<Option target="ft_ls"/>
 		</Unit>
-		<Unit filename="/Users/vmiachko/ft_ls/srcs/recursion.c">
+		<Unit filename="/home/fameowner/ft_ls/srcs/recursion.c">
 			<Option target="ft_ls"/>
 		</Unit>
-		<Unit filename="/Users/vmiachko/ft_ls/srcs/sort_list.c">
+		<Unit filename="/home/fameowner/ft_ls/srcs/sort_list.c">
 			<Option target="ft_ls"/>
 		</Unit>
-		<Unit filename="/Users/vmiachko/ft_ls/srcs/types_of_sort.c">
+		<Unit filename="/home/fameowner/ft_ls/srcs/types_of_sort.c">
 			<Option target="ft_ls"/>
 		</Unit>
-		<Unit filename="/Users/vmiachko/ft_ls/CMakeLists.txt">
+		<Unit filename="/home/fameowner/ft_ls/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
