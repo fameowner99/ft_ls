@@ -6,7 +6,7 @@
 /*   By: vmiachko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/09 13:47:01 by vmiachko          #+#    #+#             */
-/*   Updated: 2018/06/17 17:43:30 by vmiachko         ###   ########.fr       */
+/*   Updated: 2018/06/18 11:10:02 by vmiachko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,13 @@ static void			print_f(t_union un, int s, t_data *tmp)
 		ft_printf(GREEN"%-*s "RESET, s, tmp->str);
 }
 
-static inline void	new_line(int *i, int c, t_data *tmp)
+static inline void	new_line(int *i, int c, t_data *tmp, t_union un)
 {
 	if (*i == c)
 	{
 		*i = 0;
-		tmp ? ft_printf("\n") : 0;
+		if (check_if_empty_dir(tmp, un))
+			ft_printf("\n");
 	}
 }
 
@@ -52,7 +53,7 @@ void				print_all(t_data *head, t_union un)
 					&& (!un.flag_out.f && tmp->str[0])))
 			++i;
 		tmp = tmp->next;
-		new_line(&i, c, tmp);
+		new_line(&i, c, tmp, un);
 	}
 	if (check_if_empty_dir(head, un))
 		write(1, "\n", 1);

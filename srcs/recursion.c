@@ -6,7 +6,7 @@
 /*   By: vmiachko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/10 13:53:02 by vmiachko          #+#    #+#             */
-/*   Updated: 2018/06/17 18:57:07 by vmiachko         ###   ########.fr       */
+/*   Updated: 2018/06/18 10:27:43 by vmiachko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void				recursion(char *curr_dir, t_union *un, char *next_dir)
 {
 	t_data			*tmp;
 	t_data			*data;
-	static int 		i = 0;
+	static int		i = 0;
 
 	data = create_data(curr_dir);
 	choose_sort(&data, *un);

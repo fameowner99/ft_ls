@@ -6,7 +6,7 @@
 /*   By: vmiachko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/06 18:45:19 by vmiachko          #+#    #+#             */
-/*   Updated: 2018/06/17 19:30:40 by vmiachko         ###   ########.fr       */
+/*   Updated: 2018/06/18 11:15:57 by vmiachko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,8 @@ static inline void	new_line(int *i, int c, t_data *tmp)
 	if (*i == c)
 	{
 		*i = 0;
-		tmp ? ft_printf("\n") : 0;
+		if (tmp)
+			ft_printf("\n");
 	}
 }
 
@@ -79,7 +80,7 @@ void				print_files(t_data *head, t_union un)
 		{
 			print_f(un, s, tmp);
 			if (!((!un.flag_out.a && tmp->str[0] == '.')
-				  && (!un.flag_out.f && tmp->str[0])))
+				&& (!un.flag_out.f && tmp->str[0])))
 				++i;
 			new_line(&i, c, tmp);
 		}

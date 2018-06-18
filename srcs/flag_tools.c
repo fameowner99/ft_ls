@@ -6,7 +6,7 @@
 /*   By: vmiachko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/05 13:06:06 by vmiachko          #+#    #+#             */
-/*   Updated: 2018/06/17 17:39:14 by vmiachko         ###   ########.fr       */
+/*   Updated: 2018/06/18 10:25:44 by vmiachko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,6 @@ int					find_number_of_columns(void)
 {
 	struct winsize	w;
 
- 	ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
+	ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
 	return (w.ws_col);
 }

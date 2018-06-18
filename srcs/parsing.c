@@ -6,7 +6,7 @@
 /*   By: vmiachko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/05 13:54:45 by vmiachko          #+#    #+#             */
-/*   Updated: 2018/06/17 17:46:05 by vmiachko         ###   ########.fr       */
+/*   Updated: 2018/06/18 10:29:24 by vmiachko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,23 +70,22 @@ static inline void	print_usage(char *str)
 	ft_printf("usage: [-1Ralrtf] [file ...]\n"RESET);
 }
 
-static inline void	dir(int fd, t_union *un, char *str)
+static inline void	dir(t_union *un, char *str)
 {
-	close(fd);
 	un->flag_un.found_dir = 1;
 	un->data = data_container_push_back(un->data,
 		str, ".");
 }
 
-void				parse_input(t_union *un, int argc, char **argv)
+void				parse_input(t_union *un, int argc, char **argv, int i)
 {
-	int	i;
-	int	fd;
+	struct stat		s;
+	int				r;
 
-	i = 1;
 	while (i < argc)
 	{
-		if ((fd = open(argv[i], O_RDONLY) < 0))
+		r = stat(argv[i], &s);
+		if ((r < 0))
 		{
 			if (!un->flag_un.found_dir && !check_flag(un, argv[i]))
 			{
@@ -102,7 +101,7 @@ void				parse_input(t_union *un, int argc, char **argv)
 				un->error = container_push_back(un->error, argv[i]);
 		}
 		else
-			dir(fd, un, argv[i]);
+			dir(un, argv[i]);
 		++i;
 	}
 }

@@ -87,7 +87,7 @@ void				ft_ls(int argc, char **argv)
 
 	set_flag(&un);
 	set_v(&un);
-	parse_input(&un, argc, argv);
+	parse_input(&un, argc, argv, 1);
 	un.flag_un.arg = count_argc(argc, argv, un);
 	if (un.error)
 	{

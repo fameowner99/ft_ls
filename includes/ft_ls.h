@@ -88,7 +88,7 @@ typedef struct			s_union
 
 void					set_flag(t_union *un);
 void					ft_ls(int argc, char **argv);
-void					parse_input(t_union *un, int argc, char **argv);
+void					parse_input(t_union *un, int argc, char **argv, int i);
 t_container				*container_push_back(t_container *head, char *str);
 void					sort_list_error(t_container **head,
 							int (*cmp)(char*, char*));
